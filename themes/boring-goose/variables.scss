@@ -1,0 +1,43 @@
+
+$square-room-hover-bg: rgba(255, 255, 255, .4);
+$square-room-last-created-color: #222;
+$square-room-last-created-text-shadow: 0 0 2px white;
+
+// room controls
+$room-control-bg: white;
+$room-control-color: rgba(0,0,0,.7);
+$room-hover-control-bg: white;
+$room-hover-control-color: rgba(0,0,0,.9);
+
+// input panel & sizer
+$input-panel-top-border: thin solid #c5bda0;
+$input-sizer-background: linear-gradient(to bottom, #fbfaf4, #e2d7b1);
+$input-sizer-handle-background: linear-gradient(to bottom, #fbfaf4, #e2d7b1);
+$input-sizer-handle-color: #222;
+$input-sizer-shadow: 0 1px 3px rgba(0, 0, 0, .7);
+
+// prefs
+$prefs-box-border: thin solid rgba(120, 106, 86, 0.58);
+
+// autocomplete
+$autocomplete-border: thin solid #777;
+$autocomplete-bg: #F0EAD6;
+$autocomplete-selected-bg: #fffcc5;
+
+// bubbles
+$bubble-bg: #9d957c;
+$bubble-color: #222;
+$bubble-highlight-color: #000;
+
+.room-bubble.bubble .no-access {
+	color: black;
+}
+
+// tags
+$tag-color: #695d50;
+$tag-background: #e6ddbd;
+$tag-bubble-background-color: #695d50;
+$tag-bubble-color: #ddd;
+.tag-bubble pre.prettyprint {
+	color: #333;
+}

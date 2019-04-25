@@ -1,0 +1,129 @@
+doctype html
+html
+	head
+		title Miaou - Pad
+		meta(property="og:title", content=vars.room.name)
+		meta(property="og:description", content=vars.room.description)
+		meta(property="og:image", content=vars.room.img)
+		link(id="favicon",rel="icon",type="image/png",href="static/M-32.png")
+		script(src="socket.io/socket.io.js")
+		script(src="static/jquery-3.3.1.min.js")
+		script#locals(type="Application/JSON") !{inlineJSON(vars)}
+		script(src="static/miaou.min.js?v=42")
+		script(src="static/pad.min.js?v=02")
+	body.pad.desktop
+		input(type="hidden", id="secret", value=secret, FIXME="just a test, send with sio instead of post")
+		#non-top
+			#left
+				#users
+			#center
+				#vert-center
+					#message-scroller
+						div#messages
+					#notifications
+					#input-panel.medium
+						#input-sizer-hoverable
+							#input-sizer-centerer
+								#input-sizer
+								.handle ::::::::::
+						.left
+							textarea#input(lang=vars.room.lang)
+							#preview.rendered(style="display:none")
+						.right
+							button#send Send
+							button.small#shortcuts Shortcuts
+							button.small#showPreview Preview
+							button.small#hidePreview(style="display:none") Hide
+							button.small#cancelEdit(style="display:none") Cancel
+							button.small#uploadOpen Upload
+					#upload-panel
+						#upload-controls
+							| Select an image to send to imgur
+							br
+							br
+							input(type="file",id="file")
+							button#uploadSend Send
+							button#cancelUpload Cancel
+						#upload-wait(style="display:none")
+							p Uploading image...
+							img(src="static/ajax-loader-bar.gif")
+				#hist
+			#right
+				#room-area
+					#room-tags.tag-set
+					#room-controls
+						#room-watch.room-control watch room
+						#room-unwatch.room-control unwatch room
+						#room-edit.room-control edit room
+						#auths.room-control authorizations
+					#room-description.rendered
+				.tabs
+					span.tab.selected(page="notablemessagespage") Notable Messages
+					span.tab(page="search") Search
+				.page.selected#notablemessagespage
+					#notable-messages
+				.page#search
+					#search-query
+						.search-input-line
+							input#search-input(autocomplete="off")
+						#search-options
+							.search-input-line
+								input(type="checkbox")#search-starred
+								label(for="search-starred") starred
+								.search-options-details
+									input(type="checkbox")#search-starred-by-me
+									label(for="search-starred-by-me") by me
+							.search-input-line
+								input(type="checkbox")#search-written
+								label(for="search-written") written
+								.search-options-details
+									input(type="radio",name="search-written-by",checked="checked")#search-written-by-me
+									label(for="search-written-by-me") by me
+									input(type="radio",name="search-written-by")#search-written-by
+									label(for="search-written-by") by @
+									input.username(type="text")#search-author
+							.search-input-line
+								input(type="checkbox")#search-exact
+								label(for="search-exact") exact
+								input(type="checkbox")#search-regex
+								label(for="search-regex") regex
+								input(type="checkbox")#search-img
+								label(for="search-img") image
+								input(type="checkbox")#search-link
+								label(for="search-link") external link
+					#search-results-navigator
+						#search-results-count
+						#search-results-previous-page ◀
+						#search-results-page
+						#search-results-next-page ▶ 
+					#search-load-bar.load-bar
+					#search-results
+						i
+							p Hit <code>esc</code> to leave the search
+		#stripe
+			#stripe-top
+				#M-menu
+					a#Miaou-logo-wrapper(href="rooms")
+						object.Miaou-logo#Miaou-logo(type="image/svg+xml",data="static/Miaou.svg")
+					#menu-content
+						p You're connected as <span id=me></span>
+						a.menu-item#menu-logout Log Out
+						a.menu-item#menu-settings Settings
+						a.menu-item#menu-help(href="help") Help
+				#room-panel-wrapper
+					#room-panel-bg
+					#room-panel
+						#room-title
+							a#roomname(href=vars.room.path)
+				#watches
+			#rooms-panel.closed
+				#rooms
+					#rooms-content
+						.rooms-tabs
+							span.aftertabs
+								button.small#create-room Create A Room
+								#room-search-div
+									input#room-search-input(placeholder="filter rooms")
+									button.small#room-search-reset X
+						#rooms-page
+	

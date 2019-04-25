@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Message Format Sandbox</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src=miaou.min.js></script>
+	<link rel="stylesheet" href="themes/boring-goose/miaou.css"></link>
+	<style>
+		body {
+			background: #F0EAD6;
+			font-family: Helvetica, arial, freesans, clean, sans-serif;
+			font-size: 14px;
+			margin:0;
+			padding:0;
+		}
+		#C1 {
+			float: left;
+			width: 49%;
+		}
+		#test_input {
+			width:100%;
+			height: 500px;
+			margin: 3px;
+		}
+		#C2 {
+			float: right;
+			width: 49%;
+		}
+		#html, #result {
+			padding: 1%;
+			margin: 0.5%;
+			background: white;
+		}
+	</style>
+</head>
+<body>
+<div id=C1>
+<textarea id=test_input spellcheck=false>
+# Rules :
+
+1. you can test in this sandbox
+1. nothing is saved
+1. the existing text is just an example
+
+> Now a citation over 4 lines with some **bold** and some *italic*, a blank line :
+>
+> an URL : http://dystroy.org
+> and a markdown style link : [dystroy](http://dystroy.org)
+
+* a list item
+* followed by ---**many** _other ones_--- __another__ _one_
+
+## Tricky ones :
+http://this.link/shouldnt_be_styled/index.xml
+[This link has a **tricky** href](http://miaou.dystroy.org/help#Ping_and_reply)
+
+
+## Image :
+On the next line : ` http://dystroy.org/re7210/img/tartines-saint-jacques-850-02.jpg `
+ http://dystroy.org/re7210/img/tartines-saint-jacques-850-02.jpg
+
+*This sentence is in italic and the end is **in bold too***
+**Now the reverse : all in bold and the last word in *italic***
+
+
+## Code :
+A line with `**inlined** _code_` and an equation : `y = 2*x`
+*(as you see stars and underscores are preserved in code)*
+A code block :
+	#html, #result {
+		padding: 1%;
+		margin : 0.5%;
+		background: white;
+	}
+
+# Title levels
+## Level 2
+### Third level
+#### Quatro
+##### Cinq
+If you need more title levels in a chat comment... There might be a problem.
+
+# Not (yet?) supported :
+
+## style parts including links :
+*the first part should maybe be in italic including [the link](http://miaou.dystroy.org/help#Ping)*, but it's not.
+
+</textarea>
+<input type=checkbox id=showcode><label for=showcode>Show HTML</label>
+</div>
+<div id=C2 class=message>
+<div id=result class=rendered></div>
+<div id=html style="display:none;"></div>
+</div>
+<script>
+function format(){
+	var md = $('#test_input').val();
+	console.log(JSON.stringify(md));
+	var html = miaou.fmt.reset().mdTextToHtml(md);
+	console.log(JSON.stringify(html));
+	$('#html').text(html);
+	$('#result').html(html);
+}
+$('#test_input').keyup(format).focus();
+format();
+$('#result').on('click', 'img', function(){ window.open(this.src) })
+$('#showcode').change(function(){ $('#html').toggle() });
+</script>
+</body>
+</html>

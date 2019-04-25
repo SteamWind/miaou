@@ -1,59 +1,42 @@
 # Miaou
 
-A chat server with authentication, persistent and searchable history, markdown formatting, private rooms, stars and votes, and a few other features.
+A chat server with authentication, persistent and searchable history, rich markdown formatting, video, private rooms, conversation highlighting, plugins, persisted notifications, code and table rendering, specialized link boxing, github hooks, bots, and many other features.
 
-You can see it in action or use it on http://dystroy.org/miaou.
+![screenshot](https://i.imgur.com/gqHo9Mu.png)
 
-To discuss the code and feature of Miaou, please come to [the dedicated room](http://dystroy.org/miaou/1?Miaou).
+[![Build Status](https://travis-ci.org/Canop/miaou.svg?branch=master)](https://travis-ci.org/Canop/miaou)
+[![Chat on Miaou](https://miaou.dystroy.org/static/shields/room-en.svg?v=1)](https://miaou.dystroy.org/1?Miaou)
+[![Chat on Miaou](https://miaou.dystroy.org/static/shields/room-fr.svg?v=1)](https://miaou.dystroy.org/3?Code_Croissants)
 
-# Features
+**[Introduction/Gallery](http://miaou.dystroy.org/static/intro.html)**
 
-* Muti-room
-* Public and Private rooms
-* Persisted
-* Searchable
-* graphical view of chat's history
-* Votes
-* Pin and star
-* Markdown formatting, with keyboard shortcuts
-* Message preview
-* Image boxing
-* Pings, optional desktop notification and loud pings
-* Cross-rooms pings 
-* Message replying
-* Message edition
-* Permanent message links
-* In place links (no new window, no passive extracts)
-* Authorization levels and administration
-* OAuth2 authentication (Google, StackExchange, GitHub, Reddit)
-* Global unique user names to prevent impersonation
-* Initially reduced long messages
-* Mobile touch devices optimized interface
-* Plugins enabling the verification the chat user is linked to external profiles
-* A plugin enabling embedded real time multi-player games (today featuring the Tribo game)
-* private messaging
-* image upload (using imgur API)
-* client side bot API (see example as userscript)
-* server side bot API
+You can see it in action or use it on https://miaou.dystroy.org (anybody can create a room for public or private use on this server).
 
-# Compatibility
+# Installing a server
 
-## Desktop
+If you want to install Miaou, the installation documentation is available [here](installation.md).
 
-Miaou works on Chrome, Firefox and Safari.
+Don't hesitate to come ask us some advices in one of the dedicated chat rooms [![Chat on Miaou](https://miaou.dystroy.org/static/shields/room-en.svg?v=1)](https://miaou.dystroy.org/1?Miaou) and [![Chat on Miaou](https://miaou.dystroy.org/static/shields/room-fr.svg?v=1)](https://miaou.dystroy.org/3?Code_Croissants) (please note that they're currently more active between 8 and 19 GMT).
 
-## Mobile devices
+And if you run your own server, please tell us, we're always happy to learn about installations.
 
-Miaou should work on most webkit based browsers in recent Android devices.
+# Contributing
 
-# Development
+As described in [the help](https://miaou.dystroy.org/help#Technical_Stack), Miaou is mostly coded in JavaScript.
 
-As described in [the help](http://dystroy.org/miaou/help#Technical_Stack), Miaou is mostly coded in JavaScript. Stuff includes node.js, PostgreSQL, OAuth2, socket.io, express, Bluebird, Redis, Jade, Passport.js, jQuery, sass/scss, Moment.js, Snap.svg, Uglify-js and nginx.
+Stuff includes node, PostgreSQL, OAuth2, socket.io, WebRTC, express, Bluebird, Redis, Pug, Passport.js, hu.js, jQuery, sass/scss, Uglify-js, gulp, jest, travis-ci, and nginx.
 
-A [vagrant](http://www.vagrantup.com/) configuration is available to help you set up a development environment quickly. See more information at its [documentation](vagrant/vagrant.md).
+Many features are implemented as plugins, and that's where you should look first: [Plugin developpement](plugins/README.md).
+
+If you have the ability and will to contribute, come and discuss with us. The best landing place is usually the [Miaou room](http://miaou.dystroy.org/1?Miaou) where you can ping @dystroy or @Florian.
+
+Help is welcome but remember:
+
+1. Come and discuss with us before to code
+2. And, **always test yourself and run the test suite before doing a pull request**.
 
 ## License
 
 Most of Miaou follows the [MIT License](http://opensource.org/licenses/MIT). Exceptions are specified [here](license.md).
 
-Copyright (c) 2014 Denys Séguret <[http://dystroy.org/](http://dystroy.org/)>
+Copyright (c) 2014 Denys Séguret <[https://www.dystroy.org/](https://www.dystroy.org/)>

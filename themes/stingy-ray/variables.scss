@@ -1,0 +1,188 @@
+
+$bg-color: white;
+$left-background: #131825; //#141b2d;
+$pad-background: rgb(81, 96, 139);
+//$pad-background: rgba(9,30,90,.7);
+$right-background: #e5e7eb;
+$box-background: white;
+
+$message-list-bg: linear-gradient(#EFF1F3, white);
+$general-text-color: #222;
+$title-text-color: #333;
+$ping-bg: rgba(100,100,200,.19);
+$ping-me-bg: rgb(255, 235, 186);
+
+$input-panel-bg-color: #e5e7eb;
+$input-panel-top-border: thin solid rgba(185, 190, 206, 0.67);
+
+// input sizer
+$input-sizer-background: linear-gradient(to bottom, #7f91c3, #2c3c67);
+$input-sizer-handle-background: linear-gradient(to bottom, #6f7180, #222);
+$input-sizer-handle-color: #ccc;
+$input-sizer-shadow: 0 1px 2px rgba(0, 0, 0, .5);
+
+// home
+$home-top-bg: #51608a;
+$home-top-color: #ccc;
+$home-hover-link-color: white;
+$home-bg: #333;
+$notif-color: #ccc;
+$notif-hover-link-color: white;
+$home-tab-bg: #e5e7eb;
+$list-odd-cell-bg: white;
+$list-even-cell-bg: #f1f1f6;
+$list-cell-color: #222;
+$list-cell-hover-link-color: black;
+
+// home-tabs (tabs of the home page and similarly built pages)
+$home-tab-bg: #e5e7eb;
+$home-tab-selected-color: black;
+$home-tab-unselected-color: #444;
+
+// dialog pages (login, error)
+$logo-bg-color: #e5e7eb;
+
+// dialogs
+$dialog-bg: white;
+$dialog-color: #222;
+$dialog-title-bg: #51608a;
+$dialog-title-color: #eee;
+
+// user page
+$user-page-bg: #51608a;
+
+// username page
+$username-page-bg: $pad-background;
+$usename-page-color: #e5e7eb;
+
+// mobile chat
+$mtab-bg: rgba(9,30,90,.85);
+$mtab-color: #ccc;
+$mpage-bg: rgba(9,30,90,.95);
+$mpage-color: #ccc;
+
+// notables & search tabs on mobile
+$mobile-tab-page-bg: #e5e7eb;
+$mobile-tab-page-color: #222;
+$mobile-tab-selected-color: black;
+$mobile-tab-color: #444;
+
+// #users
+$user-text-color-in-user-list: #999;
+$connected-user-text-color-in-user-list: #eee;
+$connected-user-bg-color-in-user-list: #40485f;
+
+// user in message
+$user-color-shadow-in-messages: 2px 0 0;
+$user-in-messages-bg: none;
+$hovered-user-color-shadow-in-messages: 4px 0 0;
+
+// message
+$message-me-bg: rgba(229,231,235,0.45);
+$citation-background: rgba(255,255,153, .3);
+
+// profile
+$user-profile-title-color: rgba(255,255,255,.9);
+$user-def-color: rgba(255,255,255,.75);
+$profile-text-color: rgba(255,255,255,.9);
+$profile-bg: rgba(9,30,90, .85);
+$profile-box-shadow: none;
+
+// buttons
+$button-box-shadow: none;
+$small-button-box-shadow: none;
+$message-decoration-button-box-shadow: none;
+$small-button-box-shadow: none;
+$button-bg-color: rgba(255,255,255,.9);
+$button-text-color: #111;
+$button-hover-bg-color: white;
+$button-hover-text-color: #003;
+$button-hover-border-color: #003;
+$decoration-button-border-radius: 2px;
+
+// top stripe & drawer
+$roomname-color: white;
+$roomname-text-shadow: 0 0 2px black;
+$pad-room-hover-bg: $right-background;
+$pad-room-desc-bg: $right-background;
+$pad-room-last-message-bg: #eee;
+$pad-room-last-message-border-top: #aaa;
+$room-tab-bg-color: #e5e7eb;
+$selected-room-tab-color: #222;
+$hovered-room-tab-color: #eee;
+$unselected-room-tab-color: #ccc;
+$opacity-behind-open-top: 1;
+
+// watches
+$watch-bg: rgba(255,255,255,.8);
+
+// history
+$hist-bg: $left-background;
+$hist-color: #ddd;
+$hist-month-border-bottom: thin solid #444;
+$hist-normal-day-background: transparent;
+$hist-vis-day-background: #444;
+$hist-hover-day-background: #51608a;
+$hist-bar-color: $right-background;
+$hist-bubble-background: #51608a;
+
+// side tabs
+$chat-tabs-border-color: #bbc;
+$chat-tabs-border-width: 1px;
+$chat-tabs-selected-bg-image: none;
+$chat-tabs-unselected-bg-color: transparent;
+$chat-tabs-selected-bg-color: white;
+$chat-page-selected-bg: white;
+
+// side messages
+$side-message-border-top: thin solid rgba(255,255,255,0.1);
+$side-message-border-bottom: thin solid rgba(0,0,0,0.1);
+$side-message-even-background: rgba(0,0,0,0.03);
+$side-message-hover-bg: rgba(9,30,90,.2);
+$side-message-selected-bg: rgba(9,30,90,.4);
+
+// wzins
+$wzin-conv-bg: ( rgba(139, 69, 19, .4), rgba(42, 18, 234, .4), rgba(180, 237, 228, .7), rgba(192, 169, 244, .7) );
+$wzin-edit-bg: rgba(208, 120, 16, .35);
+$wzin-reply-bg: rgba(71, 71, 249, .44);
+$wzin-link-bg: rgba(222, 1, 80, .35);
+
+// M-Menu
+$menu-item-color: white;
+$menu-background: rgba(9,30,90,.89);
+$menu-item-hover-bg: rgba(9,30,90,.95);
+
+// tags
+$tag-color: #eee;
+$tag-background: linear-gradient(to bottom, #5367a9, #30448c);
+.tag-bubble pre.prettyprint {
+	color: #333;
+}
+
+// miaou logo
+//~ $miaou-logo-color: orange;
+$miaou-logo-color: #e5e7eb;
+
+// profile avatar rendering
+$profiled-avatar-filter: drop-shadow(0 0 1px white);
+$profile-avatar-filter: drop-shadow(0 0 2px white);
+
+
+// ---------------
+// specific things
+
+.user-messages .avatar {
+	border-radius: 50%;
+}
+
+button, input[type="reset"], input[type="submit"] {
+	color: #333;
+	background-color: #fcfcfc;
+	background-image: linear-gradient(to bottom,#fcfcfc 0,#f1f1f1 100%);
+	border-color: #c2c0c2 #c2c0c2 #a19fa1;
+	line-height: 1.4;
+	&:hover {
+		color: #000;
+		background-image: linear-gradient(to bottom,#ebebf1 0,#e0e0ff 100%);
+	}
+}

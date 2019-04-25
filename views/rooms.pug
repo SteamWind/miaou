@@ -1,0 +1,72 @@
+doctype html
+html
+	head
+		title Miaou - Rooms
+		link(rel="icon",type="image/png",href="static/M-32.png")
+		script(src="static/jquery-3.3.1.min.js")
+		script#locals(type="Application/JSON") !{inlineJSON(vars)}
+		script(src="static/miaou.min.js")
+		script(src="static/rooms.min.js")
+		style.
+			.CL, .CR {
+				background: $bg-color;
+				width: 50%;
+				padding: 2px;
+				display: table-cell;
+				vertical-align: top;
+			}
+			.CC {
+				padding: 2px;
+			}
+	body.home.desktop
+		a(href="https://github.com/Canop/miaou",target="github")
+			img(style="position:absolute; top:0; right:0; border:0;",src="static/gh_ribbon_right_gray.png",alt="Fork me on GitHub")
+		section#home-top
+			.MP
+				#langfilter
+					each lang, key in vars.langs
+						div.lang.off(id=key)
+							img(src="static/langs/"+key+".png")
+				object.Miaou-logo#Home-logo(type="image/svg+xml",data="static/Miaou.svg")
+				p.links
+					| You're connected as
+					span.username= user.name
+					| -
+					a(href="prefs") Settings
+					| -
+					a#logout(href="#") Log Out
+					| -
+					a(href="room") Create a room
+					| -
+					a(href="help#About") Help
+					| -
+					a(href="legal") Legal
+		section
+			.MP#home-blurb
+				#home-notifs
+					h2
+						form(method="post")
+							| Notifications
+							if pings.length > 0
+								input(type="hidden", name="secret", value=secret)
+								input(type="hidden",name="clear_pings",value="true")
+								input(type="submit",value="Clear")
+						if pings.length==1
+							p
+								| You've been pinged in room&nbsp;
+								a(href=pings[0].room)= pings[0].roomname
+						else if pings.length
+							p You've been pinged in rooms
+							ul 
+								each ping in pings
+									li
+										a(href=ping.room)= ping.roomname
+						else
+							p None
+				#home-search.desktop
+					input#room-search-input(placeholder="filter rooms")
+					button.small#room-search-reset X
+		.rooms-tabs.home-tabs.MP
+			
+		section#home-main.hastabs
+			#rooms-page

@@ -1,0 +1,245 @@
+$mpad-room-bg: #332e28;
+$mpad-watches-bg: #191e1f;
+$mpad-search-bg: #423526;
+$mpad-notables-bg: #29393b;
+$mpad-users-bg: #393029;
+$mpad-menu-bg: #111;
+$mpad-write-bg: #191e1f;
+$tabs-height: 44px;
+$input-height: 50px;
+#mpad {
+	overflow: hidden;
+}
+#mvert {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow-x: hidden; // prevents Chrome from having an horizontal scrollbar here
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	#message-scroller {
+		flex: 1 1 100px;
+	}
+	#notifications {
+		flex: 0 0 auto;
+	}
+}
+.mpad-tabs {
+	flex: 0 0 $tabs-height;
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	justify-content: center;
+	padding: 0;
+	background: $mpad-users-bg;
+}
+#mpad-top-tabs{
+	box-shadow: 0 2px 2px rgba(0,0,0,.8);
+}
+#mpad-bottom-tabs{
+	box-shadow: 0 -2px 2px rgba(0,0,0,.8);
+}
+#mpad-untabber {
+	position: fixed;
+	display: none;
+	left: 0;
+	right: 0;
+	top: $tabs-height;
+	bottom: $tabs-height;
+	background: rgba(200,200,200,.7);
+}
+.mpad-tab {
+	color: white;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+.mpad-icon {
+	font-size: 18px;
+}
+#mpad-tab-room {
+	background: $mpad-room-bg;
+	flex-grow: 1;
+}
+#mpad-tab-watches {
+	background: $mpad-watches-bg;
+	width: 15%;
+}
+#mpad-tab-search {
+	background: $mpad-search-bg;
+	width: 15%;
+}
+#mpad-tab-notables {
+	background: $mpad-notables-bg;
+	width: 15%;
+}
+#mpad-tab-users {
+	background: $mpad-users-bg;
+	width: 40%;
+}
+#mpad-tab-menu {
+	background: $mpad-menu-bg;
+	flex-grow: 1;
+}
+#mpad-tab-write {
+	background: $mpad-write-bg;
+	width: 40%;
+}
+.mpad-page {
+	display: none;
+	color: white;
+}
+#mpad-page-room {
+	z-index: 21;
+	margin: 0 -2px;
+	position: fixed;
+	background: $mpad-room-bg;
+	box-shadow: 0 2px 2px rgba(0,0,0,.8);
+	top: $tabs-height - 1px;
+	left: 0;
+	right: 0;
+	max-height: calc(100% - #{$tabs-height} - 20px);
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	#room-description {
+		flex: 1;
+		overflow-y: auto;
+	}
+}
+#mpad-page-watches {
+	z-index: 21;
+	margin: 0 -2px;
+	position: fixed;
+	background: $mpad-watches-bg;
+	box-shadow: 0 2px 2px rgba(0,0,0,.8);
+	top: $tabs-height - 1px;
+	left: 0;
+	right: 0;
+	padding: 5px;
+	overflow-y: auto;
+}
+#mpad-page-search {
+	z-index: 21;
+	margin: 0 -2px;
+	position: fixed;
+	background: $mpad-search-bg;
+	box-shadow: 0 2px 2px rgba(0,0,0,.8);
+	top: $tabs-height - 1px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 5px;
+	overflow-y: auto;
+}
+#mpad-page-notables {
+	z-index: 21;
+	margin: 0 -2px;
+	position: fixed;
+	background: $mpad-notables-bg;
+	box-shadow: 0 2px 2px rgba(0,0,0,.8);
+	top: $tabs-height - 1px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 15px;
+	color: #222;
+	#notable-messages {
+		background: rgba(255,255,255,.9);
+		max-height: 100%;
+		overflow-y: auto;
+	}
+}
+#mpad-page-users {
+	z-index: 21;
+	margin: 0 -2px;
+	position: fixed;
+	background: $mpad-users-bg;
+	box-shadow: 0 -2px 2px rgba(0,0,0,.8);
+	bottom: $tabs-height - 1px;
+	left: 0;
+	right: 0;
+	max-height: calc(100% - 150px);
+	padding: 5px;
+	overflow-y: auto;
+}
+#mpad-page-menu {
+	z-index: 21;
+	margin: 0 -2px;
+	position: fixed;
+	background: $mpad-menu-bg;
+	box-shadow: 0 -2px 2px rgba(0,0,0,.8);
+	bottom: $tabs-height - 1px;
+	left:  0;
+	right: 0;
+	padding: 5px;
+	a.menu-item {
+		color: white;
+		text-decoration: none;
+		display: block;
+		padding: 10px;
+		font-size: 120%;
+		line-height: 150%;
+	}
+	& > p, & > a {
+		text-align: center;
+	}
+}
+
+#mpad {
+	.user-messages .user {
+		width: 80px;
+	}
+	.decorations {
+		flex: 0 0 90px;
+	}
+}
+
+#mpad-page-write {
+	background: $mpad-write-bg;
+	#input {
+		height: $input-height;
+		flex: 1;
+	}
+}
+.mpad-row {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	input {
+		flex: 3;
+		align-self: auto;
+	}
+}
+.mpad-button {
+	flex: 1;
+	margin: 5px;
+	line-height: 40px;
+	text-align: center;
+}
+#search-button.mpad-button {
+	line-height: 20px;
+}
+
+#mpad-page-watches #watches {
+	.watch {
+		color: #222;
+		padding: 7px 4px;
+		margin: 4px;
+	}
+}
+
+$watch-count-new: rgb(255,255,0);
+$watch-count-ping: rgb(255,0,0);
+#global-watch {
+	&.has-unseen {
+		color: $watch-count-new;
+	}
+	&.ping {
+		color: $watch-count-ping;
+	}
+}

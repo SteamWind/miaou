@@ -1,0 +1,17 @@
+.column-controller {
+	padding: 2px;
+	.icon-sort {
+		cursor: pointer;
+		&.active {
+			color: $emphasis-text-color;
+		}
+	}
+}
+.tbl-graph-switch {
+	margin-left: 0;
+}
+.tbl-graph-col-choice {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}

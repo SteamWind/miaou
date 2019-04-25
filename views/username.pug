@@ -1,0 +1,28 @@
+doctype html
+html
+	head
+		title Miaou - Profile Creation
+		meta(name="viewport",content="initial-scale=1, maximum-scale=1")
+		link(rel="icon",type="image/png",href="static/M-32.png")
+		script(src="static/jquery-3.3.1.min.js")
+		script#locals(type="Application/JSON") !{inlineJSON(vars)}
+		script(src="static/miaou.min.js")
+		script(src="static/username.min.js")
+	body.username
+		form(method="post")
+			input(type="hidden", name="secret", value=secret)
+			div#username-main
+				#user-miaou-logo-wrapper
+					object.Miaou-logo#User-logo(type="image/svg+xml",data="../static/Miaou.svg")
+				p Pick a name by which you will be recognized.
+				p Choose wisely (not &quot;wisely&quot;).
+				p
+					label.label Name&thinsp;:&nbsp;
+					input#name(type="text", name="name", value=suggestedName, pattern="[a-zA-Z][\\w_\\-]{2,19}")
+				p#err.error= error
+				#buttons
+					button#submit Save
+					button#gotochat Go to chat
+					button#gotoextendedprofile Add more info to my profile
+		
+

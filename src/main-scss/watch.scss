@@ -1,0 +1,119 @@
+#watches {
+	flex: 1 1;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: null;
+      	flex-wrap: wrap;
+	padding: 2px;
+}
+.watch {
+	padding: 1px 2px;
+	min-width: 25px;
+	margin: 2px 4px;
+	font-size: 0.8em;
+	cursor: pointer;
+	display: flex;
+	flex-direction: row;
+	text-decoration: none;
+	color: inherit;
+	position: relative;
+	background: $watch-bg;
+	&:hover {
+		background: $open-watch-bg;
+	}
+	&.open {
+		box-shadow: 0 0 5px black;
+	}
+	&.open::after {
+		position: absolute;
+		left:0; top: 13px; right: 0;
+		height: 12px; // hack dégueulasse
+		background: $open-watch-bg;
+		z-index: 60;
+		content: "";
+	}
+	&.has-requests {
+		box-shadow: $watch-has-requests-box-shadow;
+		.name {
+			color: $watch-has-requests-color;
+		}
+	}
+	.count:not(:empty) {
+		color: $watch-count-color;
+		background: $watch-count-new-bg;
+		padding: 0 5px;
+		display: inline-flex;
+		align-items: center;
+		&.ping {
+			background: $watch-count-ping-bg;
+		}
+	}
+	.name {
+		padding: 0 3px;
+		overflow: hidden;
+		max-width: 75px;
+		display: inline-block;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		&.dialog-room::before {
+			font-family: "fontello";
+			font-size: .85em;
+			content: "\e82f"; // fontello icon-user
+			margin-right: 2px;
+			margin-top: -2px;
+		}
+		&.compact {
+			max-width: 40px;
+		}
+	}
+	.watch-panel {
+		position: absolute;
+		background: $watch-panel-bg;
+		min-height: 20px;
+		box-shadow: 0 0 5px black;
+		padding: 10px;
+		z-index: 55;
+	}
+	.watch-panel-top { // inside watch-panel
+		height: 25px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 5px;
+		span {
+			flex: 1 0;
+			text-align: center;
+			font-weight: bold;
+		}
+	}
+	.messages { // inside watch-panel
+		max-height: 50vh;
+		overflow-y: auto;
+		.opener {
+			display: none;
+		}
+		.nminfo {
+			padding-right: 2px;
+		}
+		.message:last-child .nminfo {
+			font-weight: bold;
+			opacity: 1;
+		}
+		.message.unseen {
+			background: $unseen-message-bg;
+		}
+	}
+}
+
+.watch-requests {
+	display: block;
+	color: $watch-requests-color;
+	text-decoration: none;
+	padding: 3px;
+	margin: 5px 0;
+	border: $watch-requests-border;
+	background: $watch-requests-bg;
+	box-shadow: $watch-has-requests-box-shadow;
+}

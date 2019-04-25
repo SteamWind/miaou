@@ -1,0 +1,102 @@
+.stackexchangebox {
+	display: table-row;
+	color: black;
+	font-size: 95%;
+	background: white;
+}
+
+.so-side {
+	display: table-cell;
+	vertical-align: top;
+}
+.so-main {
+	display: table-cell;
+	vertical-align: middle;
+	max-width: 0px;
+	width: 100%;
+}
+
+.so-side {
+	width: 100px;
+	text-align: center;
+	padding-top: 5px;
+}
+
+.so-type {
+	font-weight: bold;
+}
+
+.so-side img {
+	max-width: 100%;
+}
+
+.so-tags span {
+	background-color: #E0EAF1;
+	color: #3E6D8E;
+	border-color: #3E6D8E;
+	border-style: solid;
+	font-size: .85em;
+	padding: 3px 4px;
+	border-width: 0px 1px 1px 0px;
+	margin-right: 5px;
+}
+
+.so-side .num {
+	font-weight: bold;
+	font-size: 120%;
+	opacity: 0.8;
+}
+
+.so-accepted {
+	color: green;
+}
+
+a.so-title {
+	font-weight: bold;
+	font-size: 110%;
+	text-decoration: none;
+}
+a.so-title img {
+	margin-right: 10px;
+	vertical-align: middle;
+	padding-bottom: 8px;
+	width: 40px;
+}
+
+.so-body {
+	/* border: thin dashed #aaa;*/
+	padding: 5px;
+	margin: 5px 0;
+}
+.so-comment {
+
+}
+
+.so-body pre {
+	margin-left: 10px;
+	overflow-x: auto;
+}
+
+.so-body code {
+	color: #555;
+	line-height: 1.1;
+	font-size: 95%;
+}
+
+.so-chat-message .abstract {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.so-chat-message img.so-small-icon {
+	height: 24px;
+	width: 24px;
+}
+.so-chat-message .abstract > .username {
+	flex: 0 0 auto;
+	margin: 0 5px;
+}
+.so-chat-message .abstract > a {
+	margin: 0 10px;
+	flex: 0 0 auto;
+}

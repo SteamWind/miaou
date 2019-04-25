@@ -1,0 +1,249 @@
+
+$accent: rgba(purple,0.9);
+$accent-plus: rgb(255, 0, 255);
+$accent-minus: rgb(189, 51, 164);
+
+$bg-color: #222;
+$left-background: #222;
+$right-background: #222;
+$ping-me-bg: #250F17;
+
+$citation-background: rgba(88, 88, 57, 0.7);
+
+// boxing details
+$box-background: #444;
+$box-border: #555;
+
+// input sizer
+$input-sizer-handle-color: $accent-plus;
+
+// autocomplete
+$autocomplete-border: thin solid #555;
+$autocomplete-bg: #333;
+$autocomplete-selected-bg: $accent-minus;
+
+// square rooms in list
+$square-room-bg: #151515;
+$square-description-opacifier-bg: rgba(0,0,0, .45);
+$square-room-description-text-shadow: 0 0 1px black;
+$square-room-name-color: #bbb;
+$square-room-box-shadow: 1px 1px 2px black;
+$square-room-hover-box-shadow: 0px 0px 3px $accent-minus;
+$square-description-color: #aaa;
+$square-room-hover-bg: rgba(50,30,30, .4);
+$square-room-last-created-color: #eee;
+$square-room-last-created-text-shadow: 0 0 2px black;
+
+// lang filter
+$lang-filter-bg-off: $bg-color;
+$lang-filter-bg-on: rgba( $accent-minus, .5 );
+
+$general-text-color: #bbb;
+$title-text-color: #bbb;
+$emphasis-text-color: $accent-plus;
+$highlight-text-color: $accent-minus;
+$bubble-highlight-color: $accent-minus;
+$message-content-bg: #333;
+$hovered-message-content-bg: #3a3a3a;
+
+$no-avatar-bg: #444;
+
+$user-in-messages-border-right: none;
+$hovered-user-in-messages-border-right: none;
+$user-in-messages-bg: rgba(5,5,5,.4);
+
+$user-color-shadow-in-messages: 1px 0 0;
+$user-text-color-in-message: #888;
+
+$input-border-color: #222;
+$chat-tabs-border-color: rgba(219,112,147,.5);
+$message-link-color: rgb(219,112,147);
+$slashme-color: #999;
+$side-message-even-background: none;
+
+$message-content-border-color: #333;
+$content-border-bottom-before-disrupt: none;
+$content-border-top-after-disrupt: thin solid #888;
+
+$decoration-color: $accent-minus;
+$decoration-clickable-color: $accent;
+
+$message-menu-bg: black;
+$message-menu-color: white;
+$message-menu-txt-color: white;
+$message-menu-vote-color: $accent;
+$message-menu-vote-hover-color: $accent-plus;
+$message-menu-link-color: #aaa;
+
+$message-votes-color: $accent;
+
+$center-shadow: none;
+
+$message-list-bg: none;
+$message-me-bg: transparent;
+
+$connected-user-text-color-in-user-list: #bbb;
+$connected-user-bg-color-in-user-list: rgba(0,0,0,0.4);
+
+$user-text-color-in-user-list: #666;
+$message-me-user-color: PaleVioletRed;
+
+$code-text-color: #888;
+
+$message-content-table-border-color: #555;
+
+$citation-border-color: #666;
+$h3-underline-color: #666;
+$h4-underline-color: #666;
+$h5-underline-color: #666;
+
+$input-bg: #333;
+$input-text-color: #bbb;
+
+$message-normal-border-top: none;
+$message-normal-border-bottom: none;
+$message-decoration-button-box-shadow: none;
+
+$side-message-border-top: 4px solid $right-background;
+$side-message-border-bottom: none;
+
+$opener-closer-color: $accent;
+$opener-closer-hover-color: $accent-plus;
+$opener-bg: rgba(43,0,43,0.15);
+$opener-hover-bg: rgba(43,0,43,0.5);
+$closer-bg: rgba( $bg-color , 0.32);
+$closer-hover-bg: rgba(43,0,43,0.5);
+
+$reply-box-bg: #222;
+$reply-box-hover-bg: #333;
+$reply-box-color: $message-link-color;
+
+$goingto-bg: rgba(128, 0, 128, 0.7);
+
+// right tabs
+$chat-tabs-unselected-bg-color: transparent;
+$chat-tabs-selected-bg-color: rgba(255,0,100,.045);
+$chat-page-selected-bg: $chat-tabs-selected-bg-color;
+
+// profile in chat
+$profile-bg: rgba(20,0,10,0.94);
+$profile-box-shadow: none;
+$profile-text-color: #ccc;
+
+// message sizing
+$message-min-height: 34px;
+$message-content-padding: 6px 10px;
+$message-content-flex-grow: 0;
+$message-content-border-radius: 5px;
+$message-content-margin: 4px 2px 4px 10px;
+
+// room controls
+$room-control-bg: $accent;
+$room-control-color: rgba(255,255,255,.7);
+$room-hover-control-bg: $accent-plus;
+$room-hover-control-color: rgba(255,255,255,.9);
+
+// buttons
+$button-bg-color: $accent;
+$button-text-color: #bbb;
+$button-box-shadow: none;
+$button-border: none;
+$button-hover-text-color: white;
+$button-hover-bg-color: $accent-plus;
+$button-hover-border-color: none;
+$small-button-box-shadow: none;
+
+$right-panel-width: 450px;
+
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+::-webkit-scrollbar-track {
+	border-radius:6px;
+	background: #222;
+}
+::-webkit-scrollbar-track:hover {
+	background: #111;
+}
+::-webkit-scrollbar-thumb {
+	border-radius:6px;
+	background: $accent;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: $accent-plus;
+}
+
+// dialog
+$dialog-bg: #1a1a1a;
+$dialog-color: #bbb;
+$dialog-title-bg: $accent;
+$dialog-title-color: white;
+
+$mwin-bg: rgba(30,30,30,0.7);
+$mwin-content-bg: #111;
+$mwin-shadow: none;
+
+// home
+$home-main-shadows: 0 0 3px $accent-plus;
+$home-mi-shadows: 0 0 1px $accent;
+$home-top-color: #bbb;
+$home-hover-link-color: #eee;
+$notif-color: #aaa;
+$notif-hover-link-color: #ddd;
+$list-odd-cell-bg: #333;
+$list-even-cell-bg: #2b2b2b	;
+$list-cell-color: #ccc;
+$list-cell-hover-link-color: white;
+
+// prefs
+$prefs-box-border: thin solid $accent-minus;
+
+// wzins
+$wzin-conv-bg : ( rgba(176,224,230,0.25), rgba(255,255,102,0.2), rgba(188,143,143,0.2), rgba(255,235,215,0.2) );
+
+// pad
+$menu-item-hover-bg: $accent-minus;
+$roomname-text-shadow: 0 0 2px black;
+$watch-bg: $profile-bg;
+$watch-panel-bg: $profile-bg;
+$watch-count-new-bg: rgba(255,255,0,.6);
+$watch-count-ping-bg: rgba(255,0,0,.8);
+$pad-room-desc-bg: rgba(0,0,0,.1);
+$pad-room-hover-bg: black;
+$pad-room-last-message-bg: $pad-room-hover-bg;
+$pad-room-last-message-border-top: solid thin PaleVioletRed;
+$watch-has-requests-box-shadow: 0 0 10px $accent;
+$watch-has-requests-color: inherit;
+$watch-requests-color: $accent-plus;
+
+// tags
+$tag-color: #ddd;
+$tag-background: rgba(255,0,100,.2);
+$tag-bubble-background-color: #502233;
+$tag-bubble-color: #ddd;
+.tag-bubble pre.prettyprint {
+	color: #ccc;
+}
+
+// bubbles
+$bubble-bg: #111;
+$bubble-color: #eee;
+
+// miaou logo
+$miaou-logo-color: $general-text-color;
+
+// profile avatar rendering
+$profiled-avatar-filter: drop-shadow(0 0 1px PaleVioletRed);
+$profile-avatar-filter: drop-shadow(0 0 2px PaleVioletRed);
+
+// customizations
+#messages .user {
+	border-radius: 4px;
+	border-left: 4px solid #111;
+}
+#messages .user-messages.me .user {
+	border-left: 4px solid $message-me-user-color;
+}
+

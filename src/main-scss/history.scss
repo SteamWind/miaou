@@ -1,0 +1,77 @@
+.message-history {
+	max-height: 300px;
+	overflow-y: auto;
+	.mtime {
+		font-style: italic;
+		font-size: 95%;
+		color: #333;
+		margin-bottom: 2px;
+	}
+	.item {
+		margin: 4px;
+		border: thin solid #ccc;
+		padding: 2px;
+	}
+}
+
+#hist {
+	flex: 0 0 0;
+	transition: flex-basis .4s;
+	&.open {
+		flex: 0 0 $hist-width;
+		transition: flex-basis .4s;
+	}
+	background: $hist-bg;
+	overflow-y: scroll;
+	font-size: 70%;
+	color: $hist-color;
+	padding-bottom: 20px;
+	.month {
+		position: relative;
+		border-bottom: $hist-month-border-bottom;
+		.label {
+			position: absolute;
+			height: 100%;
+			left: 1px; top: 0;
+			z-index: 2;
+			opacity: 0.8;
+			pointer-events: none;
+		}
+		.day {
+			position: relative;
+			width: 100%;
+			height: 4px;
+			text-align: right;
+			background: $hist-normal-day-background;
+			cursor: pointer;
+			.bar {
+				position: absolute;
+				right: 0;
+				background-color: $hist-bar-color;
+				opacity: 0.4;
+				height: 100%;
+				&.hit {
+					opacity: 1;
+				}
+			}
+			.bubble {
+				position: absolute;
+				top: 4px;
+				left: 30px;
+				text-align: left;
+				z-index: 3;
+				background: $hist-bubble-background;
+			}
+			&.vis {
+				background: $hist-vis-day-background;
+			}
+			&.vis:hover, &:hover {
+				background: $hist-hover-day-background;
+			}
+		}
+	}
+}
+#hist.zoomed .month .day {
+	height: 10px;
+}
+

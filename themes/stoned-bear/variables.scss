@@ -1,0 +1,240 @@
+
+// variables owned by the theme
+$bear-green: #C8D584;
+$bear-text: #FFFACD;
+$mes-brown: #222222;
+$mes-me-brown: #2c2523;
+
+// autocomplete
+$autocomplete-border: thin solid #555;
+$autocomplete-bg: #333;
+$autocomplete-selected-bg: $mes-brown;
+
+// input sizer
+$input-sizer-background: linear-gradient(to bottom, #777, #222);
+$input-sizer-handle-background: linear-gradient(to bottom, #365a5a, #1c3030);
+$input-sizer-handle-color: #ccc;
+$input-sizer-shadow: 0 1px 2px rgba(0, 0, 0, .5);
+
+// chat colors
+$bg-color: #2F4F4F;
+$general-text-color: transparentize( $bear-text , 0.14 );
+$title-text-color: $bear-green;
+$emphasis-text-color: #ea0;
+$highlight-text-color: #fb1;
+$bubble-highlight-color: $highlight-text-color;
+$message-me-bg: rgba(163, 83, 49, 0.08);
+$message-list-bg: #222;
+$user-text-color-in-user-list: $bear-green;
+$ping-bg: rgba(99, 91, 73, 0.53);
+$ping-me-bg: #635B49;
+$box-background: transparent;
+$box-border: none;
+
+// opener & closer backgrounds
+$opener-bg: rgba( $bg-color , 0.22);
+$opener-hover-bg: rgba(255,255,255,0.3);
+$closer-bg: rgba( $bg-color , 0.18);
+$closer-hover-bg: rgba(255,255,255,0.3);
+
+// home
+$home-top-color: $general-text-color;
+$home-hover-link-color: $title-text-color;
+$notif-color: $general-text-color;
+$notif-hover-link-color: $title-text-color;
+$list-odd-cell-bg: $mes-me-brown;
+$list-even-cell-bg: $mes-brown;
+$list-cell-color: $general-text-color;
+$list-cell-hover-link-color: $title-text-color;
+
+// prefs
+$prefs-box-border: thin solid #436767;
+
+// square rooms in list
+$square-room-bg: $mes-brown;
+$square-description-opacifier-bg: rgba(0,0,0,.45);
+$square-room-description-text-shadow: 0 0 1px black;
+$square-room-name-color: $title-text-color;
+$square-room-box-shadow: 0px 0px 2px black;
+$square-room-hover-box-shadow: 0px 0px 4px black;
+$square-description-color: #aaa;
+$square-room-hover-bg: transparentize( $mes-me-brown , 0.3 );
+$square-room-last-created-color: #eee;
+$square-room-last-created-text-shadow: 0 0 2px black;
+
+// history
+$hist-color: #ddd;
+$hist-month-border-bottom: thin solid #5a6a5f;
+$hist-vis-day-background: rgba(45, 38, 36, 0.6);
+$hist-hover-day-background: #51608a;
+$hist-bar-color: #b7bda0;
+$hist-bubble-background: #51608a;
+
+// dialogs
+$dialog-bg: white;
+$dialog-color: #222;
+$dialog-title-bg: $mes-brown;
+$dialog-title-color: $bear-text;
+
+$message-margin: 4px;
+
+$hovered-message-content-bg: rgba(100,200,0,.04);
+
+$citation-border-color: #2f4f4f;
+$citation-background: rgba(51, 51, 36, 0.7);
+
+$connected-user-text-color-in-user-list: $bear-green;
+$connected-user-bg-color-in-user-list: rgba(0,0,0,0.1);
+
+$user-text-color-in-message: $bear-green;
+$code-text-color: #999;
+
+$user-color-shadow-in-messages: none;
+
+$input-bg: lighten($bg-color, 6%);
+$input-border: inherit;
+
+$input-text-color: white;
+$notification-text-color: #A0522D;
+$message-link-color: #c07220;
+$slashme-color: transparentize( $bear-text , 0.6 );
+
+$no-avatar-bg: $bg-color;
+
+$message-content-table-border-color: $bg-color;
+
+$message-decoration-button-box-shadow: none;
+
+$decoration-color: rgba($bear-text,.2);
+$decoration-clickable-color: $bear-text;
+
+$message-menu-bg: $bg-color;
+$message-menu-color: $bear-text;
+$message-menu-txt-color: $bear-text;
+$message-menu-vote-color: rgba($bear-text,.2);
+$message-menu-vote-hover-color: $bear-text;
+$message-menu-link-color: $bear-text;
+
+$message-votes-color: $bear-text;
+
+$reply-box-bg: rgba(222,184,135,0.15);
+$reply-box-hover-bg: rgba(222,184,135,0.6);
+$reply-box-color: rgba(255,255,255,0.5);
+
+$message-normal-border-top: none;
+$message-normal-border-bottom: none;
+$message-me-normal-border-top: none;
+$message-me-normal-border-bottom: none;
+
+$user-in-messages-bg: none;
+
+$content-border-bottom-before-disrupt: none;
+$content-border-top-after-disrupt: none;
+
+$user-messages-vmargin: 0;
+
+$user-in-messages-border-right: 2px solid rgba(0,0,0,.00);
+$hovered-user-in-messages-border-right: 2px solid rgba(0,0,0,.11);
+$user-messages-border-top: thin solid lighten( $mes-brown, 4% );
+$user-messages-border-bottom: thin solid darken( $mes-brown, 4% );
+$user-messages-me-border-top: thin solid lighten( $mes-me-brown, 3% );
+$user-messages-me-border-bottom: thin solid darken( $mes-me-brown, 3% );
+
+$goingto-bg: transparentize( brown, 0.2 );
+
+// profile avatar rendering
+$profiled-avatar-filter: drop-shadow(0 0 1px);
+$profile-avatar-filter: drop-shadow(0 0 4px);
+
+
+// side tabs
+$chat-tabs-border-color: rgba(0,0,0,0.3);
+$chat-tabs-border-width: 1px;
+$chat-tabs-unselected-bg-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0.08));
+$chat-tabs-selected-bg-image: none;
+$chat-tabs-unselected-bg-color: transparent;
+$chat-tabs-selected-bg-color: transparent;
+$chat-page-selected-bg: $chat-tabs-selected-bg-color;
+
+// message sizing
+$message-min-height: 30px;
+$message-content-padding: 4px;
+$message-content-line-height: 1.3;
+
+// profile in chat
+$profile-bg: #1B0E05;
+$profile-box-shadow: none;
+$profile-text-color: #8ADADA;
+
+// room controls
+$room-control-bg: #555;
+$room-control-color: $bear-green;
+$room-hover-control-bg: #544;
+$room-hover-control-color: darcken( $bear-green , 10%);
+
+// buttons
+$button-bg-color: #555;
+$button-text-color: $bear-green;
+$button-box-shadow: none;
+$button-hover-bg-color: #555;
+$button-hover-text-color: darcken( $bear-green , 10%);
+$small-button-box-shadow: none;
+$button-border: 1px solid #444;
+$button-hover-border-color: #888;
+
+::-webkit-scrollbar {
+	width: 12px;
+}
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 2px 2px 6px rgba(0,0,0,0.3);
+	background: $bg-color;
+}
+::-webkit-scrollbar-thumb {
+	-webkit-box-shadow: inset 2px 2px 6px rgba(255,255,255,0.2);
+	border-radius: 2px;
+	background: $mes-brown;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: $mes-me-brown;
+}
+
+// tags
+$tag-color: $general-text-color;
+$tag-background: linear-gradient(to bottom, #2b5f5f, #1a4040);
+$tag-bubble-background-color: #2c3838;
+$tag-bubble-color: #ddd;
+.tag-bubble pre.prettyprint {
+	color: #ccc;
+}
+
+// bubbles
+$bubble-bg: #536565;//#fea;
+//$bubble-color: #222;
+//$bubble-highlight-color: #000;
+
+// wzins
+$wzin-conv-bg : ( rgba(176,224,230,0.32), rgba(255,255,102,0.3), rgba(188,143,143,0.3), rgba(255,235,215,0.3) );
+$wzin-edit-bg: $mes-me-brown;
+$wzin-reply-bg: rgba(176,224,230,0.13);
+
+// pad
+$menu-item-hover-bg: transparentize( $mes-me-brown , 0.4 );;
+$roomname-text-shadow: 0 0 2px black;
+$watch-bg: #153131;
+$watch-panel-bg: #335353;
+$watch-count-new-bg: #544D04;
+$watch-count-ping-bg: rgba(255,0,0,.6);
+$pad-room-desc-bg: rgba(0,0,0,.1);
+$pad-room-hover-bg: #0b2727;
+$pad-room-last-message-bg: $pad-room-hover-bg;
+$pad-room-last-message-border-top: solid thin #131;
+$watch-has-requests-color: inherit;
+$watch-requests-bg: $mes-brown;
+$watch-requests-color: inherit;
+
+// miaou logo
+$miaou-logo-color: $general-text-color;
+
+.user-messages .avatar {
+	border-radius: 2px
+}

@@ -1,0 +1,39 @@
+version: '2'
+
+services:
+
+  miaou:
+    build: .
+    ports:
+      - "80:8204"
+    links:
+      - postgres
+      - redis
+    depends_on:
+      - postgres
+      - redis
+    env_file:
+      - docker/miaou-default.env # define default environment variables
+      - docker/miaou.env # allow to override or add local environment variables
+
+  postgres:
+    image: postgres
+    ports:
+      - "5432"
+    volumes:
+      - psql_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: miaou
+      POSTGRES_PASSWORD: miaou
+      PGPASSWORD: miaou
+
+  redis:
+    image: redis
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379"
+
+volumes:
+  psql_data:
+  redis_data:

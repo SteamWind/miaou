@@ -1,0 +1,24 @@
+doctype html
+html
+	head
+		title Miaou
+		meta(name="viewport", content="initial-scale=1, maximum-scale=1")
+		link(rel="icon", type="image/png",href="static/M-32.png")
+		link(id='theme-link', rel='stylesheet', href='static/themes/'+theme+'/miaou.css')
+		script(src="static/jquery-3.3.1.min.js")
+		script#locals(type="Application/JSON") !{inlineJSON(vars)}
+		script(src="static/miaou.min.js")
+		script(src="static/login.min.js?v=2")
+		style.
+			#buttons {
+				line-height: 40px;
+			}
+	body.mobile
+		.mask.logo
+			div.dialog.intro
+				div.dialog-title Authentication
+				div.dialog-content
+					p Miaou is a multi-room persistent chat server. It's free to use and anybody can create public or private rooms.
+					p.toRemoveWhenLogin To prevent impersonation, users must be logged in. Sign In With :
+				div.dialog-buttons#buttons
+		

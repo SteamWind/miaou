@@ -1,0 +1,324 @@
+
+// variables for color generation
+$user-min-color: #333;
+$user-max-color: #ffffff;
+
+$bg-color: #1a1a1a;
+$left-background: #111;
+$pad-background: #444;
+$right-background: #111;
+$box-background: transparent;
+$box-border: none;
+
+$general-text-color: #aaa;
+$title-text-color: #fb0;
+$emphasis-text-color: rgba(255, 187, 0, 1); // #fb0
+$highlight-text-color: rgba(230, 211, 153, 0.96); // between #fb0 and white
+$message-list-bg: #151515; //#1a1a1a;
+$ping-bg: rgb(27, 27, 27);
+$ping-me-bg: rgb(68, 51, 0);
+$img-shadow: 0px 0px 2px rgba(255, 187, 0, .4);
+$img-hover-shadow: 0px 0px 4px rgba(255, 187, 0, .8);
+
+$content-border-top-after-disrupt: thin dashed #483b0e;
+
+// input sizer
+$input-sizer-background: #fb0;
+$input-sizer-handle-background: linear-gradient(to bottom, #6f7180, #222);
+$input-sizer-handle-color: #ccc;
+$input-sizer-shadow: none;
+
+// room controls
+$room-control-bg: none;
+$room-control-color: rgba(255,255,255,.7);
+$room-hover-control-bg: rgba(110,100,60,.7);
+$room-hover-control-color: rgba(255,255,255,.9);
+
+// home
+$home-top-bg: #444;
+$home-top-color: #aaa;
+$home-hover-link-color: white;
+$home-bg: #1a1a1a;
+$notif-color: #ccc;
+$notif-hover-link-color: white;
+$list-odd-cell-bg: #393939;
+$list-even-cell-bg: #333;
+$list-cell-color: #aaa;
+$list-cell-hover-link-color: #973;
+
+// prefs
+$prefs-box-border: thin solid #a67223;
+
+// lang filter
+$lang-filter-bg-off: $bg-color;
+$lang-filter-bg-on: #970;
+
+// home-tabs (tabs of the home page and similarly built pages)
+$home-tab-bg: #333;
+$home-tab-selected-color: #fb0;
+$home-tab-unselected-color: #a80;
+
+// square rooms in list
+$square-room-bg: #444;
+$square-description-opacifier-bg: rgba(0, 0, 0, .35);
+$square-room-description-text-shadow: 0 0 2px black;
+$square-room-name-color: #ddd;
+$square-room-box-shadow: 1px 1px 2px rgba(0,0,0,.5);
+$square-room-hover-box-shadow: 2px 2px 4px black;
+$square-description-color: #ddd;
+$square-room-hover-bg: #444;
+$square-room-last-created-text-shadow: 0 0 2px black;
+
+// dialog pages (login, error)
+$logo-bg-color: #444;
+
+// dialogs
+$dialog-bg: #222;
+$dialog-color: #aaa;
+$dialog-title-bg: #444;
+$dialog-title-color: #eee;
+
+// user page
+$user-page-bg: #51608a;
+
+// username page
+$username-page-bg: $pad-background;
+$usename-page-color: #e5e7eb;
+
+// mobile chat
+$mtab-bg: rgba(9,30,90,.85);
+$mtab-color: #ccc;
+$mpage-bg: rgba(9,30,90,.95);
+$mpage-color: #ccc;
+
+// notables & search tabs on mobile
+$mobile-tab-page-bg: #222;
+$mobile-tab-page-color: #ccc;
+$mobile-tab-selected-color: #ddd;
+$mobile-tab-color: #ccc;
+
+// #users
+$user-text-color-in-user-list: #999;
+$connected-user-text-color-in-user-list: #eee;
+$connected-user-bg-color-in-user-list: #222;
+
+// user in message
+$user-text-color-in-message: #aaa;
+$user-color-shadow-in-messages: 2px 0 0;
+$hovered-user-color-shadow-in-messages: 4px 0 0;
+$user-in-messages-bg: none;
+
+// messages
+$message-me-bg: transparent;
+$hovered-message-content-bg: transparent;
+$message-link-color: rgb(178, 139, 121);
+$code-text-color: #888;
+$goingto-bg: #080808;
+$slashme-color: #777;
+$unseen-message-bg: rgba(255,255,0,0.2);
+$opener-closer-color: rgba(255,200,0,0.5);
+$opener-hover-bg: rgba(255,200,0,0.3);
+$closer-hover-bg: rgba(255,200,0,0.3);
+$citation-border-color: rgba(255, 187, 0, 0.5);
+$citation-background: none; //linear-gradient(to right, rgba(255, 193, 7, .12), transparent);
+
+// message menu
+$message-menu-bg: #444;
+$message-menu-color: #aaa;
+$message-menu-txt-color: #aaa;
+$message-menu-vote-color: #999;
+$message-menu-vote-on-color: #860;
+$message-menu-vote-hover-color: #970;
+$message-menu-link-color: #b28b79;
+$message-votes-color: #970;
+
+// input
+$input-panel-bg-color: $bg-color;
+$input-panel-top-border: thin solid #111;
+$input-bg: #111;
+$input-text-color: #bbb;
+$input-border-color: #333;
+
+// table
+$message-content-table-border-color: #333;
+
+// profile
+$user-profile-title-color: rgba(255,255,255,.9);
+$user-def-color: rgba(255,255,255,.75);
+$profile-text-color: rgba(255,255,255,.9);
+$profile-bg: #111;
+.desktop {
+	#users .user {
+		box-sizing: border-box; // so that the profiled border doesn't move elements
+	}
+	.profiled, .profile {
+		border: thin solid #972 !important;
+		box-shadow: none !important;
+	}
+	.profile-join {
+		background: #111;
+		border-top: thin solid #972;
+		border-bottom: thin solid #972;
+	}
+}
+$profile-box-shadow: none;
+
+// buttons
+$button-box-shadow: none;
+$small-button-box-shadow: none;
+$message-decoration-button-box-shadow: none;
+$small-button-box-shadow: none;
+$button-bg-color: rgba(50,50,50,.9);
+$button-text-color: #ea0;
+$button-hover-bg-color: #666;
+$button-hover-text-color: #fb0;
+$button-border: 1px solid #320;
+$button-hover-border-color: #640;
+$decoration-button-border-radius: 2px;
+
+// top stripe & drawer
+$roomname-color: #fb0;
+$roomname-text-shadow: 0 0 2px #000;
+$pad-room-hover-bg: #333;
+$pad-room-desc-bg: #333;
+$pad-room-last-message-bg: #eee;
+$pad-room-last-message-border-top: #aaa;
+$room-tab-bg-color: #222;
+$selected-room-tab-color: #fb0;
+$hovered-room-tab-color: #eee;
+$unselected-room-tab-color: #ccc;
+$opacity-behind-open-top: 1;
+
+// watches
+$watch-bg: rgba(0,0,0,.8);
+$watch-count-color: #222;
+$watch-panel-bg: linear-gradient(#111, #111, #222); // #444;
+$watch-count-new-bg: rgba(255,255,0,.6);
+$watch-count-ping-bg: rgba(255,0,0,.6);
+$open-watch-bg: #111;
+$watch-has-requests-color: inherit;
+$watch-requests-color: #CAC5C5;
+.desktop .watch {
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+}
+.desktop .watch.open {
+	border-image: linear-gradient(to bottom, #fb0, black) 1 20%;
+}
+.desktop .watch-panel {
+	border-style: solid;
+	border-width: 1px;
+	border-image: linear-gradient(to top, #fb0, black) 1 20%;
+}
+
+// history
+$hist-bg: $left-background;
+$hist-color: #ddd;
+$hist-month-border-bottom: thin solid #444;
+$hist-normal-day-background: transparent;
+$hist-vis-day-background: #444;
+$hist-hover-day-background: #fb0;
+$hist-bar-color: #970;
+$hist-bubble-background: #51608a;
+
+// side tabs
+$chat-tabs-border-color: #750; // #fb0;
+$chat-tabs-border-width: 1px;
+$chat-tabs-selected-bg-image: none;
+$chat-tabs-unselected-bg-color: transparent;
+$chat-tabs-selected-bg-color: #151515;
+$chat-page-selected-bg: #151515;
+
+// side messages
+$side-message-border-top: thin solid rgba(255,255,255,0.1);
+$side-message-border-bottom: thin solid rgba(0,0,0,0.1);
+$side-message-even-background: rgba(0,0,0,0.03);
+$side-message-hover-bg: rgba(9,30,90,.2);
+$side-message-selected-bg: rgba(9,30,90,.4);
+
+// reply box
+$reply-box-bg: #333;
+$reply-box-hover-bg: black;
+$reply-box-color: #aaa;
+
+// wzins
+$wzin-conv-bg: ( rgba(139, 69, 19, .4), rgba(42, 18, 234, .4), rgba(180, 237, 228, .7), rgba(192, 169, 244, .7) );
+$wzin-edit-bg: rgba(208, 120, 16, .35);
+$wzin-reply-bg: rgba(71, 71, 249, .44);
+$wzin-link-bg: rgba(222, 1, 80, .35);
+
+// M-Menu
+$menu-item-color: #aaa;
+$menu-background: #444;
+$menu-item-hover-bg: #333;
+
+// bubbles
+$bubble-bg: #fea;
+$bubble-color: #222;
+$bubble-highlight-color: #000;
+
+// tags
+$tag-color: #999;
+$tag-background: linear-gradient(to bottom, #555, #333);
+$tag-bubble-background-color: $bubble-bg;
+$tag-bubble-color: $bubble-color;
+.tag-bubble pre.prettyprint {
+	color: #aaa;
+}
+
+// miaou logo
+$miaou-logo-color: #fb0;
+
+// profile avatar rendering
+$profiled-avatar-filter: drop-shadow(0 0 1px white);
+$profile-avatar-filter: drop-shadow(0 0 2px white);
+
+// autocomplete
+$autocomplete-border: thin solid #777;
+$autocomplete-bg: #333;
+$autocomplete-selected-bg: #320;
+
+// help page
+$help-nav-bg: #222;
+$help-link-color: #fb0;
+
+#help-body #help-content kbd {
+	background: black;
+	color: white;
+	box-shadow: none;
+	text-shadow: none;
+	font-size: 12px;
+	border: none;
+}
+
+// ---------------
+// specific things
+
+#home-top, #stripe {
+	border-bottom: 2px solid #fb0;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+::-webkit-scrollbar-track {
+	border-radius: 1px;
+	background: #111;
+}
+::-webkit-scrollbar-track:hover {
+	background: #000;
+}
+::-webkit-scrollbar-thumb {
+	border-radius: 1px;
+	background: #430;
+	cursor: pointer;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #fb0;
+}
+
+.user-messages .avatar {
+	border-radius: 50%;
+}

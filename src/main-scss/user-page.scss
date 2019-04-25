@@ -1,0 +1,75 @@
+body.user {
+	background: $user-page-bg;
+}
+#user-box {
+	background-color: white;
+	box-shadow: 0 0 4px black;
+	padding: 10px;
+}
+#user-miaou-logo-wrapper {
+	padding-top: 60px;
+	max-width: 600px;
+	margin: auto;
+	cursor: pointer;
+}
+#User-logo {
+	width: 150px;
+}
+#user-box {
+	width: 600px;
+	margin: auto;
+	section+section {
+		border-top: thin dashed #ccc;
+		min-height: 20px;
+	}
+	h2 {
+		font-size: 105%;
+	}
+	h3 {
+		font-size: 95%;
+	}
+}
+#user-main-profile {
+	display: flex;
+	flex-direction: row;
+}
+#user-fields, #user-avatar {
+	flex: 1;
+}
+#user-fields {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	margin-left: 10px;
+}
+.user-field {
+	display: flex;
+	flex-direction: row;
+}
+
+.user-field-name {
+	flex: 0 0 100px;
+}
+.user-field-val {
+	flex: 1;
+}
+#user-buttons {
+	button {
+		display: inline-block;
+	}
+}
+#user-avatar {
+	.avatar {
+		max-height: 220px;
+		max-width: 400px;
+	}
+}
+.external-identity {
+	display: flex;
+	align-items: center;
+}
+.externalProfileName {
+	flex: 0 0 220px;
+	text-align: right;
+	margin-right: 10px;
+}

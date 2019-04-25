@@ -1,0 +1,203 @@
+.mask {
+	position: fixed;
+	z-index:30;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	background-color: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 5px;
+	&.open {
+		background-color: transparentize($bg-color, .4);
+		transition: background-color 2s;
+	}
+	&.logo {
+		background: $logo-bg-color url(../../Miaou.svg) center no-repeat;
+		background-size: contain;
+		.dialog {
+			background: transparentize( $dialog-bg, .1 );
+		}
+	}
+}
+.mobile .mask.logo {
+	background-size: cover;
+}
+
+.dialog {
+	&.small {
+		min-width: 300px;
+	}
+	display: flex;
+	flex-direction: column;
+	flex: 0 0 auto;
+	max-width: 100%;
+	max-height: 80%;
+	z-index: 31;
+	box-shadow: 0px 3px 6px black;
+	border-radius: 5px;
+	padding: 0;
+	background: $dialog-bg;
+	color: $dialog-color;
+	.dialog-content {
+	}
+	.rendered {
+		background: lighten( $bg-color, 10% ) ;
+		box-shadow: inset 1px 1px 2px rgba(0,0,0,0.3);
+		max-height: 180px;
+		overflow-y: auto;
+	}
+	&[error] {
+		background-color:#C33;
+	}
+	a {
+		text-decoration: underline;
+	}
+	.warning {
+		color: #400;
+	}
+}
+.dialog-title {
+	flex: 0 0 auto;
+	color: $dialog-title-color;
+	margin-top: 0;
+	margin-bottom: 10px;
+	padding: 4px;
+	background: $dialog-title-bg;
+	font-size: 105%;
+	font-weight: normal;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	text-align: center;
+	&[error] {
+		border-color: red;
+	}
+}
+
+.default-button {
+	font-weight: bold;
+}
+
+table.form {
+	width: 100%;
+	input, textarea {
+		width: 100%;
+	}
+	input[type=radio], input[type=checkbox] {
+		width: initial;
+	}
+	textarea {
+		height: 80px;
+	}
+	td.leftborder {
+		border-left: 1px solid #222;
+	}
+	th, td {
+		padding: 4px;
+	}
+	th, td:first-child {
+		text-align: right;
+	}
+	th:last-child {
+		text-align: left;
+	}
+}
+body.desktop table.form {
+	th {
+		width: 160px;
+	}
+}
+.dialog-content {
+	overflow-y: auto;
+	flex: 0 0 auto;
+	padding: 7px;
+	p, h2, .form, .label {
+		clear: both;
+	}
+	h2{
+		margin-left: 4px;
+	}
+	.label {
+		display:block;
+		font-weight:bold;
+		text-align:right;
+		width:120px;
+		float:left;
+		padding: 8px 4px;
+	}
+	input[type=text], .input {
+		background: $input-bg;
+		color: $input-text-color;
+		float:left;
+		padding:4px 2px;
+		width: calc( 100% - 155px );
+		&.unlabeled {
+			width: calc( 100% - 25px );
+		}
+		margin: 4px 2px 15px 10px;
+	}
+	.small {
+		color:#666666;
+		display:block;
+		font-size:95%;
+		font-weight:normal;
+		text-align:right;
+		width:120px;
+	}
+	.cblabel {
+		float: left;
+		padding: 4px 2px;
+		width: calc( 100% - 200px );
+		margin: 2px 0 5px 0;
+	}
+	input[type=checkbox] {
+		float: left;
+		margin: 10px 10px;
+	}
+	textarea {
+		float:left;
+		padding:4px 2px;
+		border:solid 1px #888;
+		width: calc( 100% - 155px );
+		margin:2px 0 15px 10px;
+		height: 70px;
+	}
+	.mdpreview {
+		float:left;
+		padding:4px 2px;
+		width: calc( 100% - 155px );
+		margin:2px 0 20px 10px;
+		height: 70px;
+	}
+}
+.dialog-buttons {
+	flex: 0 0 auto;
+	padding: 11px 15px;
+	text-align: center;
+}
+.close_dialog {
+	float: right;
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-bottom: 6px;
+	cursor: pointer;
+	&:hover {
+		background: #333;
+	}
+}
+
+.ban-dialog {
+	white-space: nowrap;
+	span {
+		margin: 7px;
+		line-height: 25px;
+	}
+	input {
+		margin-left: 2%;
+	}
+	#ban-reason {
+		width: 400px;
+	}
+}

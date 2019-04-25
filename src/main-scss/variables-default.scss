@@ -1,0 +1,336 @@
+// To create a theme, create a directory in /themes
+//  with a variables.scss file and copy from here
+//  the variables you want to override.
+
+// variables for color generation
+$user-min-color: #000000 !default;
+$user-max-color: #ffffff !default;
+
+// chat colors
+$bg-color: #F0EAD6 !default;
+$left-background: linear-gradient( lighten($bg-color, 5%), darken($bg-color, 10%) ) !default;
+$right-background: linear-gradient( lighten($bg-color, 5%), darken($bg-color, 10%) ) !default;
+$box-background: white !default;
+$box-border: thin solid #ddd !default;
+
+// input sizer
+$input-sizer-background: linear-gradient(to bottom, #777, #222) !default;
+$input-sizer-handle-background: linear-gradient(to bottom, #6f7180, #222) !default;
+$input-sizer-handle-color: #ccc !default;
+$input-sizer-shadow: 0 1px 2px rgba(0, 0, 0, .5) !default;
+
+$general-text-color: #222 !default;
+$title-text-color: #655 !default;
+$emphasis-text-color: #44d !default;
+$highlight-text-color: #002 !default; // weaker than emphasis, usable in a standard text without hurting the eye
+$message-list-bg: white !default;
+$message-me-bg: rgba(240,234,214,0.5) !default;
+$notifications-bg: linear-gradient(to bottom, #fffa9e, #eacb75) !default;
+$notifications-border: thin solid #f3de7a !default;
+$notifications-bg-color: #fffa9e !default;
+$notification-text-color: black !default;
+
+// square rooms in list
+$square-room-bg: lighten($bg-color, 5%) !default;
+$square-description-opacifier-bg: rgba(243, 243, 245, .35) !default;
+$square-room-description-text-shadow: 0 0 1px white !default;
+$square-room-name-color: #222 !default;
+$square-room-box-shadow: 1px 1px 2px #999 !default;
+$square-room-hover-box-shadow: 1px 1px 4px #222 !default;
+$square-description-color: $general-text-color !default;
+$square-room-last-created-color: #eee !default;
+$square-room-hover-bg: rgba(43, 72, 142, .7) !default;
+$square-room-last-created-text-shadow: 0 0 2px black !default;
+
+$connected-user-bg-color-in-user-list: rgba(255,255,255,0.55) !default;
+$connected-user-text-color-in-user-list: black !default;
+
+$user-text-color-in-user-list: #444 !default;
+$user-text-color-in-message: #555 !default;
+$code-text-color: #444 !default;
+$code-bg: rgba(200, 200, 200, .04) !default;
+$code-padding: 3px !default;
+
+// bar at the right of the user and holding his color
+$user-color-shadow-in-messages: 1px 0 0 !default;
+$hovered-user-color-shadow-in-messages: 3px 0 0 !default;
+
+$input-panel-bg-color: $bg-color !default;
+$input-panel-top-border: none !default;
+$input-bg: white !default;
+$input-text-color: black !default;
+
+$message-normal-border-top: none !default;
+$message-normal-border-bottom: none !default;
+$message-me-normal-border-top: $message-normal-border-top !default;
+$message-me-normal-border-bottom: $message-normal-border-bottom !default;
+
+$message-margin: 0 !default;
+
+$content-border-bottom-before-disrupt: none !default;
+$content-border-top-after-disrupt: thin dashed #ccc !default;
+
+$user-messages-vmargin: 4px !default;
+$user-in-messages-border-right: none !default;
+$hovered-user-in-messages-border-right: none !default;
+$user-messages-border-top: none !default;
+$user-messages-border-bottom: none !default;
+$user-messages-me-border-top: none !default;
+$user-messages-me-border-bottom: none !default;
+
+$message-decoration-button-box-shadow: 1px 1px 2px #999 !default;
+$message-content-bg: transparent !default;
+$hovered-message-content-bg: transparent !default;
+
+$no-avatar-bg: #eee !default;
+
+$input-border-color: inherit !default;
+
+$message-content-table-border-color: #bbb !default;
+$decoration-color: #aaa !default;
+$decoration-clickable-color: #444 !default;
+$deleted-message-color: #666 !default;
+
+// message menu
+$message-menu-bg: white !default;
+$message-menu-color: #555 !default;
+$message-menu-txt-color: black !default;
+$message-menu-vote-color: #888 !default;
+$message-menu-vote-hover-color: #555 !default;
+$message-menu-vote-on-color: $general-text-color !default;
+$message-menu-link-color: #336 !default;
+
+$message-me-user-bg: inherit !default;
+$message-me-user-color: inherit !default;
+
+$user-in-messages-bg: linear-gradient(to bottom left, rgba(240,234,214,0.7) 0%,rgba(0,0,0,0) 25px) !default;
+
+$message-link-color: Sienna !default;
+
+$message-votes-color: black !default;
+
+$ping-border-left-width: 2px !default;
+$ping-bg: rgba(100,100,100,.2) !default;
+$ping-me-bg: rgb(255, 235, 186) !default;
+$slashme-color: #333 !default;
+$citation-border-color: #bbb !default;
+$citation-background: rgba(255,255,153, .4) !default;
+$h3-underline-color: black !default;
+$h4-underline-color: #333 !default;
+$h5-underline-color: #999 !default;
+$center-shadow: 0 0 2px black !default;
+$img-shadow: 0px 0px 2px rgba(0, 0, 0, .3) !default;
+$img-hover-shadow: 0px 0px 3px rgba(0, 0, 0, .5) !default;
+
+$opener-closer-color: #988 !default;
+$opener-closer-hover-color: black !default;
+$opener-bg: rgba( $bg-color , 0.52) !default;
+$opener-hover-bg: rgba(255,255,255,0.6) !default;
+$closer-bg: rgba( $bg-color , 0.32) !default;
+$closer-hover-bg: rgba(255,255,255,0.6) !default;
+
+$reply-box-bg: #ede7d3 !default;
+$reply-box-hover-bg: #d5cba6 !default;
+$reply-box-color: #222 !default;
+
+$goingto-bg: #d5cba6 !default;
+
+$mwin-bg: transparentize( darken( $bg-color, 15% ), .12 ) !default;
+$mwin-content-bg: white !default;
+$mwin-shadow: 0 0 5px black !default;
+
+$first-not-seen-top-border: 6px dotted rgba(0,0,0,0.1) !default;
+
+// home
+$home-main-shadows: 0 0 10px black !default;
+$home-mi-shadows: 0 0 5px black !default;
+$home-top-bg: $bg-color !default;
+$home-top-color: #222 !default;
+$home-hover-link-color: black !default;
+$home-bg: darken( $bg-color, 5% ) !default;
+$notif-color: #222 !default;
+$notif-hover-link-color: black !default;
+$list-odd-cell-bg: white !default;
+$list-even-cell-bg: #faf7d5 !default;
+$list-cell-color: black !default;
+$list-cell-hover-link-color: $list-cell-color !default;
+
+// lang filter
+$lang-filter-bg-off: $bg-color !default;
+$lang-filter-bg-on: lighten( $bg-color, 15% ) !default;
+
+// home-tabs (tabs of the home page and similarly built pages)
+$home-tab-bg: $bg-color !default;
+$home-tab-selected-color: $general-text-color !default;
+$home-tab-unselected-color: transparentize( $general-text-color, .25) !default;
+
+// user page
+$user-page-bg: $bg-color !default;
+
+// prefs
+$prefs-box-border: thin solid #aaa !default;
+
+// username page
+$username-page-bg: $bg-color !default;
+$usename-page-color: black !default;
+
+// dialog pages (login, error)
+$logo-bg-color: $bg-color !default;
+
+// side tabs
+$chat-tabs-border-color: #988 !default;
+$chat-tabs-border-width: 1px !default;
+$chat-tabs-unselected-bg-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0.01),rgba(0,0,0,0.07)) !default;
+$chat-tabs-selected-bg-image: none !default;
+$chat-tabs-unselected-bg-color: transparent !default;
+$chat-tabs-selected-bg-color: white !default;
+$chat-page-selected-bg: white !default;
+$chat-page-side-top-panel-shadow: 0 2px 2px rgba(0, 0, 0, .4) !default;
+
+// side messages
+$side-message-border-top: thin solid rgba(255,255,255,0.1) !default;
+$side-message-border-bottom: thin solid rgba(0,0,0,0.1) !default;
+$side-message-even-background: rgba(0,0,0,0.03) !default;
+$side-message-hover-bg: lighten($bg-color, 10%) !default;
+$side-message-selected-bg: lighten($bg-color, 24%) !default;
+
+// message sizing
+$user-messages-padding: 2px 0 !default;
+$message-min-height: 30px !default;
+$user-padding-in-message: 1px 3px !default;
+$message-content-padding: 4px !default;
+$message-content-line-height: 1.5 !default;
+$message-content-flex-grow: 1 !default;
+$message-wide-content-flex-grow: 1 !default;
+$message-content-border-radius : inherit !default;
+$message-content-margin: 0 !default;
+
+// profile in chat
+$user-profile-title-color: $title-text-color !default;
+$profile-bg: #fffcc5 !default;
+$profile-box-shadow: 2px 2px 2px #999 !default;
+$profile-text-color: black !default;
+$user-def-color: $title-text-color !default;
+
+// buttons
+$button-bg-color: #E3DAC9 !default;
+$button-text-color: #333 !default;
+$button-box-shadow: 1px 1px 3px #999 !default;
+$button-border: 1px solid #999 !default;
+$button-hover-bg-color: #E3DAC9 !default;
+$button-hover-text-color: black !default;
+$button-hover-border-color: #666 !default;
+$small-button-box-shadow: 1px 1px 2px #999 !default;
+$decoration-button-border-radius: 3px !default;
+
+// chat layout
+$input-height: 83px !default; // height of input
+$left-panel-width: 140px !default;
+$right-panel-width: 400px !default;
+$hist-width: 200px !default;
+
+// room controls
+$room-control-bg: rgba(0,0,50,.5) !default;
+$room-control-color: rgba(255,255,255,.9) !default;
+$room-hover-control-bg: rgba(0,0,50,.7) !default;
+$room-hover-control-color: rgba(255,255,255,.9) !default;
+
+// mobile chat
+$minput-height: 50px !default; // height of input in mobile interface
+$mtab-height: 39px !default;   // height of the top tabs in mobile interface
+$mtab-bg: rgba($bg-color, .9) !default;
+$mtab-color: black !default;
+$mpage-bg: rgba($bg-color, .9) !default;
+$mpage-color: black !default;
+$mpage-shadow: 0 0 4px black !default;
+
+// notables & search tabs on mobile
+$mobile-tab-page-bg: white !default;
+$mobile-tab-page-color: transparentize($title-text-color, 0.5) !default;
+$mobile-tab-color: transparentize($title-text-color, 0.5) !default;
+$mobile-tab-selected-color: $title-text-color !default;
+
+// dialog
+$dialog-bg: white !default;
+$dialog-color: black !default;
+$dialog-title-bg: #E3DAC9 !default;
+$dialog-title-color: black !default;
+
+// wzins
+$wzin-conv-bg: ( rgba(139, 69, 19, .2), rgba(42, 18, 234, .17), rgba(180, 237, 228, .4), rgba(192, 169, 244, .4) ) !default;
+$wzin-edit-bg: rgba(208, 120, 16, .35) !default;
+$wzin-reply-bg: rgba(71, 71, 249, .14) !default;
+$wzin-link-bg: rgba(222, 1, 80, .25) !default;
+
+// pad (non mobile chat)
+$roomname-color: inherit !default;
+$pad-background: $left-background !default;
+$closed-stripe-shadow: 0 0 2px black !default;
+$open-stripe-shadow: 0 0 12px black !default;
+$menu-item-color: inherit !default;
+$menu-background: $left-background !default;
+$menu-item-hover-bg: rgba(255,255,255,.7) !default;
+$roomname-text-shadow: 0 0 2px rgba(255,255,255,1) !default;
+$watch-bg: rgba(255,255,255,.3) !default;
+$watch-count-color: #222 !default;
+$watch-panel-bg: white !default;
+$open-watch-bg: $watch-panel-bg !default;
+$watch-count-new-bg: rgba(255,255,0,.5) !default;
+$watch-count-ping-bg: rgba(255,0,0,.5) !default;
+$pad-room-hover-bg: rgba(255,255,255,.9) !default;
+$pad-room-desc-bg: rgba(255,255,255,.5) !default;
+$pad-room-last-message-bg: white !default;
+$pad-room-last-message-border-top: solid thin #ddd !default;
+$room-tab-bg-color: transparent !default;
+$selected-room-tab-color: $title-text-color !default;
+$hovered-room-tab-color: transparentize($title-text-color, 0.2) !default;
+$unselected-room-tab-color: transparentize($title-text-color, 0.5) !default;
+$opacity-behind-open-top: .45 !default;
+$watch-has-requests-box-shadow: 0 0 10px orangered !default;
+$watch-has-requests-color: #540404 !default;
+$watch-requests-bg: rgba(255,255,0,.2) !default;
+$watch-requests-color: #540404 !default;
+$watch-requests-border: thin solid rgba(0,0,0,.2) !default;
+
+// autocomplete
+$autocomplete-border: thin solid #777 !default;
+$autocomplete-bg: $bg-color !default;
+$autocomplete-selected-bg: #aab !default;
+
+$unseen-message-bg: $watch-count-new-bg !default;
+
+// history
+$hist-bg: rgba($bg-color,.8) !default;
+$hist-color: #655 !default;
+$hist-month-border-bottom: thin dotted rgba(#655,0.4) !default;
+$hist-normal-day-background: transparent !default;
+$hist-vis-day-background: white !default;
+$hist-hover-day-background: #d5cba6 !default;
+$hist-bar-color: #655 !default;
+$hist-bubble-background: rgba(255,255,255,0.6) !default;
+
+// profile avatar rendering
+$profile-avatar-filter: none !default;
+$profiled-avatar-filter: none !default;
+
+// help page
+$help-nav-bg: rgba(9,30,90,.84) !default;
+$help-link-color: #111 !default;
+
+// miaou logo
+$miaou-logo-color: black !default;
+
+// bubbles
+$bubble-bg: #222 !default;
+$bubble-color: #ccc !default;
+$bubble-highlight-color: #eef !default;
+
+// tags
+$tag-color: #115586 !default;
+$tag-background-color: #afd3ef !default;
+$tag-background: linear-gradient(to bottom, #5367a9, #243a88) !default;
+$tag-bubble-background-color: #115586 !default;
+$tag-bubble-color: #afd3ef !default;
+
+$load-bar-color: #CBCAD0 !default;
+

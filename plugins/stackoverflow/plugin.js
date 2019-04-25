@@ -1,19 +1,19 @@
 
-var Promise = require("bluebird"),
-	config = require('../../config.json'),
+var	Promise = require("bluebird"),
+	seboxer = require("./se-boxer.js"),
+	config,
 	request = require('request');
-	
+
 exports.name = "StackOverflow";
 
 // returns a promise
-// updates and provides in resolution the pluginPlayerInfos if successful, else throws an error 
-function createSOProfile(user, ppi, vals) {
+// updates and provides in resolution the pluginPlayerInfos if successful, else throws an error
+function createSOProfile(user, ppi, vals){
 	var p = Promise.defer(), num = +vals.so_num;
 	request('http://stackoverflow.com/users/'+num, function(error, res, body){
 		if (!error && res.statusCode===200) {
-			var m, r=/<a[^<>]*href="([^"]+)"[^<>]*>([^<>]+)<\/a>/ig;
-			var found, sm;
-			while (m=r.exec(body)) {
+			var found, m, r=/<a[^<>]*href="([^"]+)"[^<>]*>([^<>]+)<\/a>/ig;
+			while ((m=r.exec(body))) {
 				if (m[1].indexOf(config.server)==0 && /\bmiaou\b/i.test(m[2])) {
 					if (~m[2].split(/\w/).indexOf(user.name)) {
 						found = m[0];
@@ -30,7 +30,7 @@ function createSOProfile(user, ppi, vals) {
 					}
 				}
 			}
-			p.reject("Required link wasn't found in profile");
+			p.reject("Required link wasn't found in Stack Overflow profile.");
 		} else {
 			p.reject(new Error('Error in querying stackoverflow.com'));
 		}
@@ -40,22 +40,19 @@ function createSOProfile(user, ppi, vals) {
 
 // returns the HTML of the profile
 // or undefined if there's no profile
-function renderSOProfile(ppi) {
-	if (ppi.num) {
-		var html = '<a target=_blank href=http://stackoverflow.com/users/'+ppi.num+'>';
-		html += '<img src=http://stackoverflow.com/users/flair/'+ppi.num+'.png>';
-		html += '</a>';
-		return html
-	}
+function renderSOProfile(ppi){
+	if (!ppi.num) return;
+	return `<a target=_blank href=https://stackoverflow.com/users/${ppi.num}>
+	<img src=https://stackoverflow.com/users/flair/${ppi.num}.png>
+	</a>`;
 }
 
 function describeSOProfileCreation(user){
-	return [
-		"to validate you're the owner of this SO account, please put the following link in your SO profile :",
-		"<code>["+user.name+" @ Miaou]("+config.server+"/user/"+user.id+")</code>",
-		"You'll be able to remove the link once the profile is checked. It would be nice to keep it, though.",
-		"As StackOverflow doesn't immediately update the public profile, you might have to wait 2 minutes before hitting the <i>save</i> button below.",
-	].join('<br>');
+	return `to validate you're the owner of this SO account, please put the following link in your SO profile :<br>
+		<code>[${user.name} @ Miaou](${config.server}/user/${user.id})</code><br>
+		As StackOverflow doesn't immediately update the public profile,<br>
+		 you might have to wait 2 minutes before hitting the <i>Save</i> button below.<br>
+		You'll be able to remove the link once the profile is checked. It would be nice to keep it, though.`;
 }
 
 exports.externalProfile = {
@@ -65,5 +62,26 @@ exports.externalProfile = {
 			{ name:'so_num', label:'StackOverflow User ID', type:'Number' }
 		],
 		create: createSOProfile
-	}, render: renderSOProfile
+	},
+	rendering: {
+		render: renderSOProfile
+	}
+}
+
+// intercepts links and sends boxed abstracts.
+// Requests are queued and only one at a time is done.
+// As it is done each time a message is sent, performances are critical
+exports.onSendMessage = function(shoe, m, send){
+	if (!m.content || !m.id) return;
+	seboxer.rawTasks(m.content).forEach(function(task){
+		task.mid = m.id;
+		task.send = send;
+		seboxer.addTask(task);
+	});
+}
+
+exports.init = function(miaou){
+	config = miaou.config;
+	seboxer.init(miaou);
+	require('./sochat-boxer.js').init(miaou);
 }

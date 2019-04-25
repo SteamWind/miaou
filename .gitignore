@@ -3,33 +3,65 @@ node_modules
 
 # running configuration
 config.json
+config.js
 
 # dystroy's scripts, config & utilities
 deploy.sh
 autopgbackup.sh
-config-dys-tour.json
 config-dystroy.json
+config-dystroy.js
 
 # personal notes & work files
 notes.dev
 sql/postgres.alter.sql
 trav
+pub
 graphics/*.png
 
-# compilation byproducts
+# imported plugins
+plugins/miaou.bot
+plugins/mountyhall
+plugins/fireworks
+plugins/snow
+plugins/miaou.static-user-list
+plugins/local-dev
+plugins/ufo
+plugins/localbot/ 
+plugins/mastodon/ 
+plugins/mountypedia/ 
+plugins/sample-view/ 
+plugins/sciz/ 
+
+# imported plugins stuff
+roulette-*
+
+# edition byproducts
+*.swp
+
+# compilation & test byproducts
+test/format/miaou.format.node.js
 .sass-cache
-static/.sass-cache
+build
 
 # compiled files
 main.css
 miaou.concat.js
 miaou.min.js
 miaou.min.js.map
+static
 
 # execution byproducts
 *.log
 dump.rdb
+miaou.pid
 
 # vagrant
 .vagrant/
 vagrant/manifests/modules/*
+
+# docker
+docker/miaou.env
+!docker/config.js
+
+# IDE metadata
+.idea/

@@ -1,0 +1,30 @@
+if avatar
+	img.avatar(src=avatar)
+h1
+	a(target="_blank", href="user/"+user.name)= user.name
+each pa in pluginAdditions
+	| !{pa.html}
+div#userinfo
+	if isServerAdmin
+		.user-title
+			span.val Server Admin
+	if auth != 'no access' && auth != 'none'
+		div
+			span.def role in this room
+			span.val= auth
+	if userinfo.location
+		div
+			span.def location
+			span.val= userinfo.location
+	if userinfo.url
+		div
+			span.def website
+			span.val
+				a(href=userinfo.url, target="_blank")= userinfo.url
+	if userinfo.description
+		div
+			span.def about me
+			span.val= userinfo.description
+each epi in externalProfileInfos
+	h2= epi.name
+	div.externalProfile !{epi.html}

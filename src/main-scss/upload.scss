@@ -1,0 +1,14 @@
+
+.upload-thumb {
+	max-width: 190px;
+	max-height: 130px;
+}
+
+.upload-resize-dialog {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	select {
+		margin-left: 10px;
+	}
+}

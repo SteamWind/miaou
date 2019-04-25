@@ -1,0 +1,255 @@
+
+body.desktop {
+	font-size: 13px;
+	font-family: monospace;
+	letter-spacing: -.02em;
+}
+
+// variables for color generation
+$user-min-color: #555;
+$user-max-color: #ffffff;
+
+$accent: purple;
+$accent-plus: rgb(255, 0, 255);
+$accent-minus: rgb(189, 51, 164);
+
+//------------
+
+// boxing
+$box-background: #111;
+$box-border: #222;
+
+// input sizer
+$input-sizer-background: #111;
+$input-sizer-handle-background: black;
+$input-sizer-handle-color: $accent-plus;
+$input-sizer-shadow: 0px 0px 6px $accent-plus;
+
+$bg-color: black;
+$left-background: black;
+$right-background: black;
+$general-text-color: #aaa;
+$emphasis-text-color: $accent-plus;
+$highlight-text-color: $accent-minus;
+$bubble-highlight-color: $accent-minus;
+$slashme-color: #888;
+$title-text-color: #aaa;
+$emphasis-text-color: $accent-plus;
+$hovered-message-content-bg: black;
+$message-content-table-border-color: #333;
+$img-shadow: 0px 0px 3px rgba(255, 0, 255, .6);
+$img-hover-shadow: 0px 0px 6px rgba(255, 0, 255, 1);
+
+$ping-me-bg: #44153B;
+
+// autocomplete
+$autocomplete-border: thin solid #555;
+$autocomplete-bg: #333;
+$autocomplete-selected-bg: $accent-minus;
+
+// square rooms in list
+$square-room-bg: black;
+$square-description-opacifier-bg: rgba(0,0,0, .45);
+$square-room-description-text-shadow: 0 0 1px black;
+$square-room-name-color: white;
+$square-room-box-shadow: 0px 0px 3px $accent-minus;
+$square-room-hover-box-shadow: 0px 0px 6px $accent-plus;
+$square-description-color: #aaa;
+$square-room-hover-bg: rgba(50,30,50, .4);
+$square-room-last-created-color: #eee;
+$square-room-last-created-text-shadow: 0 0 2px black;
+
+$input-border-color: #222;
+$chat-tabs-border-color: $accent-minus;
+
+$message-content-border-color: #333;
+$content-border-bottom-before-disrupt: none;
+$content-border-top-after-disrupt: none;
+
+$decoration-color: $accent-minus;
+$decoration-clickable-color: $accent;
+
+$message-menu-bg: black;
+$message-menu-color: white;
+$message-menu-txt-color: white;
+$message-menu-vote-color: $accent;
+$message-menu-vote-hover-color: $accent-plus;
+$message-menu-link-color: #aaa;
+
+$message-votes-color: $accent;
+$no-avatar-bg: #444;
+
+$user-in-messages-border-right: none;
+$hovered-user-in-messages-border-right: none;
+$user-in-messages-bg: none;
+
+$center-shadow: none;
+
+$message-list-bg: black;
+$message-me-bg: transparent;
+
+$connected-user-text-color-in-user-list: #aaa;
+$connected-user-bg-color-in-user-list: rgba(0,0,0,0.4);
+
+$user-text-color-in-user-list: #666;
+$message-me-user-color: $accent-minus;
+
+$user-text-color-in-message: inherit; // gives to the username the color of the user
+$code-text-color: #888;
+
+$citation-border-color: #666;
+$citation-background: rgba(31, 31, 15, 0.7);
+
+$h3-underline-color: #666;
+$h4-underline-color: #666;
+$h5-underline-color: #666;
+
+$input-bg: #0a0a0a;
+$input-text-color: #aaa;
+$message-normal-border-top: none;
+$message-normal-border-bottom: none;
+$message-decoration-button-box-shadow: none;
+
+$side-message-border-top: 4px solid black;
+$side-message-border-bottom: none;
+
+$opener-closer-color: $accent;
+$opener-closer-hover-color: $accent-plus;
+$opener-bg: rgba(0,0,0,0.52);
+$opener-hover-bg: rgba(43,0,43,0.5);
+$closer-bg: rgba( $bg-color , 0.32);
+$closer-hover-bg: rgba(43,0,43,0.5);
+
+$reply-box-bg: #222;
+$reply-box-hover-bg: #333;
+$reply-box-color: #999;
+
+$goingto-bg: rgba(128, 0, 128, 0.7);
+
+// home
+$home-main-shadows: 0 0 10px $accent-plus;
+$home-mi-shadows: 0 0 5px $accent;
+$home-top-color: #ccc;
+$home-hover-link-color: $accent-plus;
+$notif-color: #ccc;
+$notif-hover-link-color: $accent-plus;
+$list-odd-cell-bg: #050505;
+$list-even-cell-bg: #090909;
+$list-cell-color: #ccc;
+$list-cell-hover-link-color: $accent-plus;
+
+// prefs
+$prefs-box-border: thin solid $accent-minus;
+
+// right tabs
+$chat-tabs-unselected-bg-color: transparent;
+$chat-tabs-selected-bg-color: transparent;
+$chat-page-selected-bg: $chat-tabs-selected-bg-color;
+
+// profile in chat
+$profile-bg: rgba(20,0,10,0.94);
+$profile-box-shadow: 3px 0 3px $accent-minus;
+$profile-text-color: #ccc;
+
+// profile avatar rendering
+$profile-avatar-filter: drop-shadow(0 0 2px);
+
+// message sizing
+$message-min-height: 24px;
+$message-content-padding: 1px 1px;
+$message-content-border-radius: 0;
+$message-content-margin: 1px;
+
+// room controls
+$room-control-bg: $accent;
+$room-control-color: rgba(255,255,255,.7);
+$room-hover-control-bg: $accent-plus;
+$room-hover-control-color: rgba(255,255,255,.9);
+
+// buttons
+$button-bg-color: $accent;
+$button-text-color: #aaa;
+$button-box-shadow: none;
+$button-border: none;
+$button-hover-text-color: white;
+$button-hover-bg-color: $accent-plus;
+$button-hover-border-color: none;
+$small-button-box-shadow: none;
+
+$right-panel-width: 450px;
+
+// tags
+$tag-color: #ddd;
+$tag-background: rgba(255,0,100,.2);
+$tag-bubble-background-color: #502233;
+$tag-bubble-color: #ddd;
+.tag-bubble pre.prettyprint {
+	color: #ccc;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+::-webkit-scrollbar-track {
+	border-radius:6px;
+	background: black;
+	margin: 10px;
+}
+::-webkit-scrollbar-track:hover {
+	background: #111;
+}
+::-webkit-scrollbar-thumb {
+	border-radius:6px;
+	background: $accent;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: $accent-plus;
+}
+
+// dialog
+
+$dialog-bg: #1a1a1a;
+$dialog-color: #aaa;
+$dialog-title-bg: #333;
+
+$mwin-bg: rgba(30,30,30,0.7);
+$mwin-content-bg: #111;
+$mwin-shadow: none;
+
+// wzins
+$wzin-conv-bg : ( rgba(176,224,230,0.25), rgba(255,255,102,0.2), rgba(188,143,143,0.2), rgba(255,235,215,0.2) );
+
+// pad
+$closed-stripe-shadow: 0 0 5px $accent-minus;
+$open-stripe-shadow: 0 0 300px $accent-minus;
+$menu-item-hover-bg: $accent-minus;
+$roomname-text-shadow: 0 0 2px black;
+$watch-bg: $profile-bg;
+$watch-panel-bg: $profile-bg;
+$watch-count-new-bg: rgba(255,255,0,.7);
+$watch-count-ping-bg: rgba(255,0,0,.9);
+$pad-room-desc-bg: rgba(0,0,0,.1);
+$pad-room-hover-bg: black;
+$pad-room-last-message-bg: $pad-room-hover-bg;
+$pad-room-last-message-border-top: solid thin PaleVioletRed;
+$watch-has-requests-box-shadow: 0 0 10px $accent;
+$watch-has-requests-color: red;
+$watch-requests-color: $accent-plus;
+$unseen-message-bg: rgba(255, 187, 0, 0.15);
+
+// miaou logo
+$miaou-logo-color: $accent;
+
+#messages .user-messages .user {
+	justify-content: flex-end;
+	&.size2, &.size3, &.size4 {
+		justify-content: flex-start;
+	}
+	.avatar-wrapper {
+		display: none;
+	}
+	&>span {
+		text-align: right;
+	}
+}

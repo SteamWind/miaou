@@ -1,0 +1,110 @@
+
+.tag {
+	flex: 0 0 auto;
+	white-space: nowrap;
+	display: inline-block;
+	color: $tag-color;
+	background: $tag-background;
+	margin: 2px;
+	padding: 3px 4px;
+}
+.message .content .tag {
+	a {
+		color: $tag-color;
+	}
+}
+.message .content pre.prettyprint span.tag {
+	background: transparent;
+}
+
+.bubble.tag-bubble {
+	.bubble-content, .bubble-content a {
+		background-color: $tag-bubble-background-color;
+		color: $tag-bubble-color;
+	}
+	.bubble-arrow {
+		color: $tag-bubble-background-color; // used for propagation as currentColor to borders
+	}
+}
+
+.tag-set {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 2px;
+	min-height: 26px;
+	.tag {
+		height: 16px;
+	}
+}
+
+.room .tag-set {
+	flex-wrap: nowrap;
+}
+
+.tag-set.edited {
+	background: white;
+	border: thin solid #aab;
+	input {
+		flex: 1 1 50px;
+		margin-left: 5px;
+	}
+	input, input:focus {
+		outline: none;
+		border: none;
+	}
+	input.invalid {
+		color: red;
+	}
+	.tag {
+		pointer-events: none;
+		padding: 5px 20px 2px 5px;
+		position: relative;
+		&::after {
+			position: absolute;
+			border-radius: 6px;
+			color: #eee;
+			background: rgba(80, 80, 80, .5);
+			margin-left: 4px;
+			content: "x";
+			font-size: 80%;
+			cursor: pointer;
+			pointer-events: all;
+			padding: 1px 4px 2px 4px;
+			right: 4px;
+			top: 4px;
+		}
+		&:hover::after {
+			background: #bf7171;
+		}
+	}
+}
+
+.autocomplete-tags {
+	background: white;
+	border: thin solid #333;
+	display: flex;
+	flex-wrap: wrap;
+	.autocomplete-tag {
+		cursor: pointer;
+		margin: 4px;
+		.tag {
+		}
+		.tag-description {
+			font-size: 90%;
+			opacity: .8;
+			padding: 4px;
+		}
+		&:hover .tag-description {
+			opacity: 1;
+		}
+		border: thin solid #ccc;
+		&.selected {
+			border: thin solid #999;
+		}
+	}
+}
+
+#room-area #room-tags.tag-set {
+	padding: 4px;
+}

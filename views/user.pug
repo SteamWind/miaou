@@ -1,0 +1,56 @@
+doctype html
+html
+	head
+		title=vars.user.name + ' @ Miaou'
+		meta(name="viewport", content="initial-scale=1, maximum-scale=1")
+		meta(property="og:title", content='@'+vars.user.name)
+		meta(property="og:description", content="A Miaou user")
+		meta(property="og:image", content=vars.avatar)
+		link(rel="icon",type="image/png",href="static/M-32.png")
+		script(src="../static/jquery-3.3.1.min.js")
+		script#locals(type="Application/JSON") !{inlineJSON(vars)}
+		script(src="../static/miaou.min.js")
+		script(src="../static/user.min.js")
+	body.user
+		#user-miaou-logo-wrapper
+			object.Miaou-logo#User-logo(type="image/svg+xml",data="../static/Miaou.svg")
+		#user-box
+			section#user-main-profile
+				#user-fields
+					.user-field
+						.user-field-name id
+						.user-field-val= vars.user.id
+					.user-field
+						.user-field-name name
+						.user-field-val= '@'+vars.user.name
+					if vars.userinfo.location
+						.user-field
+							.user-field-name location
+							.user-field-val= vars.userinfo.location
+					if vars.userinfo.description
+						.user-field
+							.user-field-name about me
+							.user-field-val= vars.userinfo.description
+					if vars.userinfo.url
+						.user-field
+							.user-field-name website
+							.user-field-val
+								a(href=vars.userinfo.url)= vars.userinfo.url.replace(/https?:\/\//,'')
+					#user-buttons
+						// button#user-pm='Dialog with @'+vars.user.name							
+						button#goto-home Go to Room List						
+				#user-avatar
+					if vars.avatar
+						img.avatar(src=vars.avatar)
+			section#user-external-identities
+				h2 Proven External Identities
+				each epi in externalProfileInfos
+					if (epi.html)
+						.external-identity
+							.externalProfileName= epi.name
+							.externalProfile !{epi.html}
+			each pa in pluginAdditions
+				section
+					h2= pa.title
+					| !{pa.content}
+			

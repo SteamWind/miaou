@@ -1,0 +1,134 @@
+doctype html
+html
+	head
+		title Miaou - Preferences
+		meta(name="viewport",content="initial-scale=1, maximum-scale=1")
+		link(rel="icon",type="image/png",href="static/M-32.png")
+		script(src="static/jquery-3.3.1.min.js")
+		script#locals(type="Application/JSON") !{inlineJSON(vars)}
+		script(src="static/miaou.min.js")
+		script(src="static/prefs.min.js?v=2")
+		style.
+			.CL, .CR {
+				background: $bg-color;
+				width: 50%;
+				padding: 2px;
+				display: table-cell;
+				vertical-align: top;
+			}
+			.CC {
+				padding: 2px;
+			}
+			code {
+				white-space: pre-wrap;
+			}
+	body.prefs
+		section#prefs-top
+			.MP
+				a.logo-link(href="rooms")
+					object.Miaou-logo#Prefs-logo(type="image/svg+xml",data="static/Miaou.svg")
+				p.links
+					| You're connected as
+					span.username= user.name
+					| -
+					a(id="logout",href="#") Log Out
+					| -
+					a(href="help#About",target=help) Help
+		section#prefs-notifs
+			.MP
+				h2 Preferences
+				p#err.error= error
+
+		.home-tabs.MP
+			.home-tab.selected Profile
+			.home-tab Identities
+			.home-tab Avatar
+			.home-tab Notifications
+			.home-tab Display
+			.home-tab Watch
+			
+		section#prefs-main.hastabs
+			#prefs-main-content
+				form(method="post")
+					input(type="hidden", name="secret", value=secret)
+					.home-page.selected
+						table.form
+							tr
+								th Name
+								td
+									input#name(type="text", name="name", value=suggestedName, pattern="\\w[\\w_\\-\\d]{2,19}")
+							tr
+								th About me
+								td
+									input#description(type="text", name="description", maxlength="250")
+							tr
+								th Prefered Language
+								td
+									select#lang(name="lang")
+							tr
+								th Location
+								td
+									input#location(type="text", name="location", value="", maxlength="250")
+							tr
+								th Web Site
+								td
+									input#url(type="url", name="url", value="", maxlength="250")
+					.home-page.externalProfiles
+						p If you have an account on one of those sites, you may display it in your Miaou profile by proving ownership below.
+						each epi in externalProfileInfos
+							.external-profile-info
+								h3= epi.name
+								if epi.ep.comments
+									div= epi.ep.comments
+								if epi.html
+									div.externalProfile !{epi.html}
+									div.inputs
+										- var cbid = "remove_"+epi.name
+										input(type="checkbox",name=cbid,id=cbid)
+										label(for=cbid) Remove this profile
+								else
+									table
+										each field in epi.ep.creation.fields
+											tr
+												td
+													label= field.label+'\u2009: '
+												td
+													input(type=(field.type||'text'),name=field.name)
+												if field.notice
+													td= field.notice
+									if epi.creationDescription
+										p !{epi.creationDescription}
+					.home-page.avatar
+						#avatar-edit.MP
+							#avatar-fields
+								.avatar-fields-row
+									label(for="avatar-src") Source:
+									select#avatar-src(name="avatar-src")
+										option(value="none") none
+								.avatar-fields-row
+									label#avatar-key-label(for="avatar-key")
+									input#avatar-key(name="avatar-key")
+								.avatar-fields-row
+									p#avatar-src-description
+								.avatar-fields-row
+									button(type="button")#avatar-try Try
+							#avatar-preview
+					.home-page
+						table.form
+							tr(data-pref="notif")
+							tr(data-pref="connot")
+							tr(data-pref="volume")
+								td
+									button(type="button")#try-sound Try
+							tr(data-pref="nifvis")
+					.home-page
+						table.form
+							tr(data-pref="theme")
+							tr(data-pref="datdpl")
+							tr(data-pref="mclean")
+					.home-page
+						table.form
+							tr(data-pref="otowat")
+					.dialog-buttons
+						button#submit Save
+						button#close Home

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Miaou</title>
+	<meta charset="UTF8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="icon" type="image/png" href="M-32.png">
+	<link href='http://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1">
+	<link rel="stylesheet" href="intro.css">
+</head>
+<body>
+<header>
+  <a href="http://miaou.dystroy.org/rooms">
+    <img src="Miaou-300-f.png" class="headerPic"/>
+    <img src="M-32.png" class="navPic"/>
+  </a>
+</header>
+<section id="responsive" class="center">
+  <h1>Powerful, free chat rooms</h1>
+  <p>An open-source chat with the features you expect and many other ones.</p>
+  <img class="mockup" src="pub/mockup.png" />
+  <img class="mobile" src="pub/mobile.png" />
+  <p><a class="try-it" href="http://miaou.dystroy.org/rooms">Start Miaouing!</a></p>
+</section>
+<section id="services">
+  <div>
+  <h1>Sociability</h1>
+  <ul>
+    <li>
+      <div class="image private"></div>
+      <h2>Public/Private Rooms</h2>
+      <p>Everyone can create new public or private rooms, and the top bar lets you keep track of activity in other rooms.</p>
+    </li>
+    <li>
+      <div class="image auth"></div>
+      <h2>Extended Authentication</h2>
+      <p>A user's identity can be confirmed via external sites (like StackOverflow and GitHub), so you can be sure who's who.</p>
+    </li>
+    <li>
+      <div class="image search"></div>
+      <h2>Search History</h2>
+      <p>You can search for messages in any room's Search tab. Messages and their context are never deleted so you can always link to them.</p>
+    </li>
+  </ul>
+  <ul>
+    <li>
+      <div class="image video"></div>
+      <h2>Video and Audio</h2>
+      <p>Start a video or audio chat with any connected user, even from a mobile device. No plugin necessary.</p>
+    </li>
+    <li>
+      <div class="image notifications"></div>
+      <h2>Notifications</h2>
+      <p>Get a user's attention by replying to their message, or pinging them directly with <code>@username</code>. You can enable Desktop Notifications to make sure you won't miss a reply.</p>
+    </li>
+    <li>
+      <div class="image pins"></div>
+      <h2>Upvotes and Pins</h2>
+      <p>You can up-vote noteworthy messages. You can star important messages, and room owners can pin them for all to see.</p>
+    </li>
+  </ul>
+  <div class="arrow">&gt;</div>
+  </div>
+</section>
+
+<section id="markdown">
+  <h1>Rich Text</h1>
+  <img class=zoomable src="gallery/201504-screen-rich-text.png"/>
+  <p>A special flavour of <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a> enables richly formatted messages.</p>
+  <p>Support for bold, italic, links, lists, tables, images, code, and more.</p>
+  <p>Plus some special sauce of our own: For example, to paste an image, just hit <kbd>Ctrl-V</kbd>.</p>
+  <p>Made a typo? No problem, hit the <kbd>&uarr;</kbd> (up arrow) key to edit your last message.</p>
+</section>
+
+<section id="conv">
+  <h1>Conversations</h1>
+  <img class=zoomable src="gallery/201504-screen-conv-2.png"/>
+  <p>Following a conversation in a busy room could be tricky but Miaou visualises a conversation's flow so you can stay on top of things.</p>
+</section>
+
+<section id="skins">
+  <h1>Skins</h1>
+  <img class="zoomable small" src="gallery/201504-screen-skins-sadistic-otter-2.png"/>
+  <img class="zoomable small" src="gallery/201504-screen-skins-boring-goose.png"/>
+  <br>
+  <img class="zoomable small" src="gallery/201504-screen-skins-stoned-bear.png"/>
+  <img class="zoomable small" src="gallery/201504-screen-skins-perverse-otter.png"/>
+  <p>Everyone loves to choose a skin.</p>
+</section>
+
+<section id="plugins">
+  <h1>Plugins</h1>
+  <img class=zoomable src="gallery/201504-screen-plugins.png"/>
+  <p>Miaou is highly extensible, with many plugins already written.</p>
+  <p>From embedding Wikipedia pages, StackOverflow questions and YouTube videos to plotting graphs and customising messages.</p>
+  <p>You can even challenge people to a game of Tribo!</p>
+</section>
+
+<section id="ready">
+  <div class="vert-center">
+    <h1>Ready to chat?</h1>
+    <p><a class="try-it" href="https://miaou.dystroy.org/rooms">Start Miaouing!</a></p>
+    <p class="disclaimer">You can sign in via:</p>
+    <ul>
+      <li><img src="https://i.imgur.com/4lmmZEB.png"/></li>
+      <li><img src="https://i.imgur.com/7USxBFm.png"/></li>
+      <li><img src="https://i.imgur.com/KMQUNh8.png"/></li>
+      <li><img src="https://i.imgur.com/qOpAWJn.png"/></li>
+    </ul>
+  </div>
+</section>
+
+<a href="https://github.com/Canop/miaou" target="github"><img id="github" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"/></a>
+<script>
+var html = document.documentElement,
+	services = document.getElementById("services"),
+	lists = services.getElementsByTagName("ul"),
+	listitems = services.getElementsByTagName("li"),
+	arrow = document.getElementsByClassName("arrow")[0],
+	header = document.getElementsByTagName("header")[0];
+
+function scrollTop(v){
+	if (v !== undefined) document.body.scrollTop = html.scrollTop = v;
+	return Math.max(document.body.scrollTop, html.scrollTop, window.scrollY);
+}
+
+// Toggle features and rotate arrow
+arrow.onclick = function(){
+	for(i = 0; i < lists.length; i++) {
+		lists[i].classList.toggle("active");
+	}
+	arrow.classList.toggle("rotated");
+}
+
+// image zooming
+;[].forEach.call(document.querySelectorAll('li .image, .zoomable'), function(item){
+	item.onclick = function(){
+		var zoom = document.createElement('div');
+		zoom.id = 'zoom';
+		zoom.innerHTML = item.outerHTML;
+		document.body.appendChild(zoom);
+		zoom.onclick = function(){ zoom.remove() };
+	}
+});
+
+// Change header into a nav
+window.onscroll = function(){
+	if (scrollTop() > 80 && !header.classList.contains("nav")) {
+		header.classList.add("nav");
+	} else if(scrollTop() <= 80) {
+		header.classList.remove("nav");
+	}
+}
+
+function chpage(diff){
+	var y = scrollTop(),
+		tops = [].concat(0, [].map.call(document.getElementsByTagName('section'), function(s){
+		return s.offsetTop;
+	}), document.body.scrollHeight);
+	for (var i=0; i<tops.length-1; i++) {
+		if (tops[i]<=y && y<tops[i+1]) {
+			scrollTop(tops[ (y-tops[i]<tops[i+1]-y ? i : i+1) + diff ]);
+			return false;
+		}
+	}
+}
+window.onkeydown = function(e){
+	switch (e.which) {
+	case 27: // esc
+		var zoom = document.getElementById('zoom');
+		if (zoom) zoom.remove();
+		break;
+	case 33: // page up
+		return chpage(-1), false;
+	case 34: // page down
+		return chpage(+1), false;
+	}
+}
+</script>
+</body>
+</html>

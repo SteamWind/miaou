@@ -1,0 +1,45 @@
+doctype html
+html
+	head
+		title Miaou - Rooms
+		meta(name="viewport",content="initial-scale=1, maximum-scale=1")
+		link(rel="icon",type="image/png",href="static/M-32.png")
+		link(id='theme-link',rel='stylesheet', href='static/themes/'+theme+'/miaou.css')
+		link(rel='stylesheet', href='static/rooms.mob.css')
+		script(src="static/jquery-3.3.1.min.js")
+		script#locals(type="Application/JSON") !{inlineJSON(vars)}
+		script(src="static/miaou.min.js")
+		script(src="static/rooms.min.js")
+	body.home.mobile
+		#mobtop
+			#logo
+				img(src="static/Miaou-300-f.png")
+				p.links
+					| You're connected as
+					span.username= user.name
+					br
+					a#logout(href="#") Log Out
+					| -
+					a(href="prefs") Settings
+					| -
+					a(href="room") Create a room
+					| -
+					a(href="help#About",target=help) Help
+					| -
+					a(href="legal") Legal
+			#home-notifs
+				if pings.length==1
+					p
+						| You've been pinged in room&nbsp;
+						a(href=pings[0].room)= pings[0].roomname
+				else if pings.length
+					p You've been pinged in rooms
+					ul 
+						each ping in pings
+							li
+								a(href=ping.room)= ping.roomname
+				else
+					p No notification
+			.rooms-tabs.mobtabs
+		#home-main-content
+			#rooms-page

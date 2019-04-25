@@ -1,0 +1,38 @@
+doctype html
+html
+	head
+		title Miaou - Request Room Access
+		meta(name="viewport",content="initial-scale=1, maximum-scale=1")
+		link(rel="icon",type="image/png",href="static/M-32.png")
+		script(src="static/jquery-3.3.1.min.js")
+		script(src="socket.io/socket.io.js")
+		script#locals(type="Application/JSON") !{inlineJSON(vars)}
+		script(src="static/miaou.min.js")
+		script(src="static/request.min.js")
+	body.logo
+		.mask.logo
+			div.dialog.intro
+				div.dialog-title= vars.room.name
+				div.dialog-content
+					if vars.room.private
+						p This room is private. In order to enter, you must be authorized by a room admin and you must not have been banned.
+					else
+						p You have been banned from this room.
+					if specificMessage
+						p.rendered= specificMessage
+					if canQueryAccess
+						p The best is to request an access using the button below.
+						if lastAccessRequest && lastAccessRequest.deny_message
+							p Last time you requested access to this room, you were answered this :
+							p.rendered= lastAccessRequest.deny_message
+						P If you want, you may type a few words for the admin :
+						p
+							input(type="text").unlabeled#request_speech
+						p#response
+						p.rendered#denyMessage
+				div.dialog-buttons#buttons
+					button#cancel Go Home 
+					if canQueryAccess
+						button#request Request Access
+
+
